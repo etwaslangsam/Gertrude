@@ -3,6 +3,8 @@ name,ƒƒŠƒRƒ“‚Ì‰´‚ªã©‚É‚©‚©‚Á‚Ä‚¢‚½ŒÏ‚ğ•‚¯‚½‚ç‹à”¯‹“ûŠO‘lJK‚É‚È‚Á‚Ä‰Å‚É—ˆ‚½Œ
 type,ghost
 craftman,etwaslangsam
 craftmanw,–q–ìMŸ
+craftmanurl,http://ghosthacking.webcrow.jp/index.html
+homeurl,https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 readme,readme.txt
 sakura.name,ƒK[ƒeƒB
 kero.name,—z‹C‚ÅŒy‰õ‚ÈBGM
