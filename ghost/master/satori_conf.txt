@@ -1,0 +1,44 @@
+＊初期化
+＄喋り間隔	６０秒
+＄喋り間隔誤差	１０％
+＄ユーザ名	ダーリン
+＄自動挿入ウェイトタイプ	無効
+＄自動挿入ウェイトの倍率	１００％
+＄なでられ持続秒数	２
+＄なでられ反応回数	６０
+＄トーク中のなでられ反応	無効
+＄会話時サーフェス戻し	無効
+＄自動アンカー	無効 
+＠SAORI
+calc,saori/ssu.dll,calc
+calc_float,saori/ssu.dll,calc_float
+if,saori/ssu.dll,if
+unless,saori/ssu.dll,unless
+nswitch,saori/ssu.dll,nswitch
+switch,saori/ssu.dll,switch
+substr,saori/ssu.dll,substr
+split,saori/ssu.dll,split
+replace,saori/ssu.dll,replace
+replace_first,saori/ssu.dll,replace_first
+erase,saori/ssu.dll,erase
+erase_first,saori/ssu.dll,erase_first
+count,saori/ssu.dll,count
+compare,saori/ssu.dll,compare
+compare_head,saori/ssu.dll,compare_head
+compare_tail,saori/ssu.dll,compare_tail
+length,saori/ssu.dll,length
+zen2han,saori/ssu.dll,zen2han
+han2zen,saori/ssu.dll,han2zen
+hira2kata,saori/ssu.dll,hira2kata
+kata2hira,saori/ssu.dll,kata2hira
+sprintf,saori/ssu.dll,sprintf
+iflist,saori/ssu.dll,iflist
+is_empty,saori/ssu.dll,is_empty
+is_digit,saori/ssu.dll,is_digit
+is_alpha,saori/ssu.dll,is_alpha
+choice,saori/ssu.dll,choice
+join,saori/ssu.dll,join
+reverse,saori/ssu.dll,reverse
+at,saori/ssu.dll,at
+lsimg,saori/ssu.dll,lsimg
+mkdir,saori/ssu.dll,mkdir

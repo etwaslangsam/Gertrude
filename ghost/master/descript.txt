@@ -1,0 +1,29 @@
+charset,Shift_JIS
+name,ロリコンの俺が罠にかかっていた狐を助けたら金髪巨乳外国人JKになって嫁に来た件。
+type,ghost
+craftman,etwaslangsam
+craftmanw,牧野信次
+readme,readme.txt
+sakura.name,ガーティ
+kero.name,陽気で軽快なBGM
+sakura.seriko.defaultsurface,100
+kero.seriko.defaultsurface,10
+balloon.defaultsurface,0
+seriko.alignmenttodesktop,bottom
+sakura.seriko.alignmenttodesktop,bottom
+kero.seriko.alignmenttodesktop,bottom
+sstp.allowunspecifiedsend,1
+sstp.allowcommunicate,1
+sstp.alwaystranslate,0
+name.allowoverrid,1
+shiori.cache,1
+shiori.encoding,0
+don't need onmousemove,0
+don't need bind,0
+don't need seriko talk,0
+balloon.dontmove,False
+shiori,satori.dll
+
+
+
+
