@@ -131,14 +131,13 @@
 ）
 
 ＊OnUpdateFailure
-\0（whenlist,（Reference0）==
-,timeout,\s[24]タイムアウトしたデース……。
-,md5 miss,\s[24]md5が一致しませんでしタ……。\w5\n\s[35]Hmm……作者に要連絡デスね。
-,404,\s[100]404 Not Foundデース。
-,artificial,\s[102]ワッツ？！\w5\n中断デスか？
+\0（whenlist,1==
+,（compare（バイト値、１）（Reference0）（バイト値、１）timeout）,\s[24]タイムアウトしたデース……。
+,（compare（バイト値、１）（Reference0）（バイト値、１）md5 miss）,\s[24]md5が一致しませんでしタ……。\w5\n\s[35]Hmm……作者に要連絡デスね。
+,（compare（バイト値、１）（Reference0）（バイト値、１）404）,\s[100]404 Not Foundデース。
+,（compare（バイト値、１）（Reference0）（バイト値、１）artificial）,\s[102]ワッツ？！\w5\n中断デスか？
 ,\s[24]『（Reference0）』？\w5 でダメみたいデース……。
 ）
-
 
 ＃────────
 ＃■ファイル作成反応
