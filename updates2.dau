@@ -1,6 +1,6 @@
 .gitignore4da0b39ba8e3a07ce82ac572cfbb2c04size=132
 delete.txt80fb0f04de832a229e29111e6b1d05b9size=7
-developer_options.txtd62de41ea4219da1371b38900ca8c032size=22
+developer_options.txt5a233536160a2da0778a93aceebdd2f6size=122
 install.txt5ab5c09943915290885728c9274665d4size=142
 readme.txt925f6db25988094c1556152870a905cfsize=1387
 ghost/master/descript.txt273bfdfdceb10dc4e3c3bf9bdfcff8edsize=816
@@ -41,6 +41,7 @@ shell/master/036.png4884462215b0ce77e7f89faf061f2866size=59798
 shell/master/bg.png978894819b4d6877de6788487ab8944fsize=1986
 shell/master/descript.txte1b37a969cd0d8af8492eb0f7d83e14dsize=425
 shell/master/readme.txt98779b645aca6c50684323111f017aa7size=78
+shell/master/surface0.apng82450d58276631e6a2cca98022f6b998size=56381
 shell/master/surface10.png7afc2fdd83f801cdd6e200fe001a8836size=101
 shell/master/surfaces.txt421c2fb23fbf681586be9722b40d6f0asize=2560
 shell/master/x000.pngfb45fb3461981f7771ffd28c524907a8size=56518
