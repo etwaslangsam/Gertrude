@@ -224,8 +224,11 @@
 ＃────────
 ＃■入力
 ＃────────
-＊OnUserInput
-（when,（is_empty,（Reference1））,\0\s[24]何も書かれてないデース……。\e,（（Reference0）））
+＊OnUserInput	（is_empty,（Reference1））
+\0\s[24]何も書かれてないデース……。\e
+
+＊OnUserInput	（is_empty,（Reference1））==0
+（（Reference0））
 
 ＊OnCommunicate	（compare,（Reference0）,user）
 （（Reference1））
