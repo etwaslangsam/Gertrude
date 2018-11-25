@@ -1,5 +1,12 @@
 
 ＃────────
+＃■つつき反応
+＃────────
+＊OnMouseDoubleClick	（compare,（Reference3）,0）
+＞（Reference4）つつかれ
+＞メインメニュー
+
+＃────────
 ＃■タイムイベント
 ＃────────
 ＊OnSurfaceRestore
