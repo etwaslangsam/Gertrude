@@ -2,7 +2,7 @@ charset,Shift_JIS
 name,ロリコンの俺が罠にかかっていた狐を助けたら金髪巨乳外国人JKになって嫁に来た件。
 type,ghost
 craftman,etwaslangsam
-craftmanw,牧野信次
+craftmanw,てにてに
 craftmanurl,http://ghosthacking.webcrow.jp/index.html
 homeurl,https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 readme,readme.txt
