@@ -3,4 +3,3 @@ name,ƒƒŠƒRƒ“‚Ì‰´‚ªã©‚É‚©‚©‚Á‚Ä‚¢‚½ŒÏ‚ð•‚¯‚½‚ç‹à”¯‹“ûŠO‘lJK‚É‚È‚Á‚Ä‰Å‚É—ˆ‚½Œ
 type,ghost
 directory,xof
 refresh,1
-robots,noindex

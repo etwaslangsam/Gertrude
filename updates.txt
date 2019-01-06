@@ -1,7 +1,7 @@
 file,.gitignore4da0b39ba8e3a07ce82ac572cfbb2c04size=132
 file,delete.txt80fb0f04de832a229e29111e6b1d05b9size=7
 file,developer_options.txt5a233536160a2da0778a93aceebdd2f6size=122
-file,install.txt2f3e4acbfaa8ce664c7516a00734f25esize=158
+file,install.txt5ab5c09943915290885728c9274665d4size=142
 file,readme.txt925f6db25988094c1556152870a905cfsize=1387
 file,ghost/master/descript.txtd12e48de65987f79196eb5fa3889943bsize=816
 file,ghost/master/dic_Base.txt31b33a1a937e3392734ec7f02fbb5823size=5644
