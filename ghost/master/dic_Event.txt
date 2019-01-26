@@ -17,7 +17,13 @@
 ＞時報	（compare,（現在分）,0）
 
 ＊見切れ
+＄見切れてる	1
 \0\s[3]・・・・・・。\e
+
+＊OnOffscreen
+＞見切れ	（見切れてる）==0
+＄見切れてる	
+\e
 
 ＊時報
 ＞（現在時）時
@@ -58,6 +64,13 @@ I'm ベリーベリー スリーピィ・・・。\e
 どうデスカー？\e
 
 ＃────────
+＃■バルーン変更
+＃────────
+＊OnBalloonChange
+\0\s[5]Cooooooooooool!
+\e
+
+＃────────
 ＃■最小化解除
 ＃────────
 ＊OnWindowStateRestore
@@ -66,15 +79,14 @@ I'm ベリーベリー スリーピィ・・・。\e
 ＃────────
 ＃■選択肢
 ＃────────
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
+＃＊OnChoiceSelect
+＃＄選択ＩＤ	（Reference0）
+＃＞（Reference0）
 
 ＊OnChoiceTimeout
 \0\s[34]（ユーザ名）？
 
 ＊OnAnchorSelect
-＄選択ＩＤ	（Reference0）
 ＞（Reference0）
 
 ＃────────
