@@ -77,6 +77,28 @@ I'm ベリーベリー スリーピィ・・・。\e
 \0\s[24]急に隠れろなんて……ワッツ ハップン？
 
 ＃────────
+＃■スクリーンセーバー
+＃────────
+＊OnScreenSaverEnd
+\0\s[5]（ユーザ名）！\w5
+おかえりなさいデース！\e
+
+＊OnSysSuspend
+\0\s[106]\e
+
+＊OnSysResume
+\0\s[106]...zZZ
+......zzZZZ\_w[1200]
+\s[34]\c・・・んあ？\_w[1200]
+\s[22]\c（ユーザ名）！？\w5
+\s[5]グッモーニン！
+\e
+
+＊OnDisplayPowerStatus	（Reference0）
+\0\s[105]Hi,（ユーザ名）！
+\e
+
+＃────────
 ＃■選択肢
 ＃────────
 ＃＊OnChoiceSelect
@@ -364,12 +386,5 @@ install.txtがミスしてるみたいデスね。\e
 ＃────────
 ＃ネットワークの状態
 ＃────────
-＊OnNetworkStatusChange	（compare,（Reference0）,offline）
-\0\s[100]ネットワークが切断されマシタ。\e
-
-＃────────
-＃スクリーンセーバー
-＃────────
-＊OnScreenSaverEnd
-\0\s[5]（ユーザ名）！\w5
-おかえりなさいデース！\e
+＃＊OnNetworkStatusChange	（compare,（Reference0）,offline）
+＃\0\s[100]ネットワークが切断されマシタ。\e

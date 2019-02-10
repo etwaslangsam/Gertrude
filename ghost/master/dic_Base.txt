@@ -76,11 +76,22 @@
 ＃────────
 ＃■切り替え反応
 ＃────────
-＊OnGhostChanging	（Reference0）==ガーティ
+＊OnGhostChanging
+＞（Reference0）に切り替え
+＞終了
+\e
+
+＊OnGhostChanged
+＞（Reference0）から切り替え
+＞起動
+\e
+
+＊ガーティに切り替え
 \0\s[24]顔をウォッシュして出直しマース。\_w[1000]
 
-＊OnGhostChanged	（Reference0）==ガーティ
+＊ガーティから切り替え
 \0\s[5]いいお湯でしター。
+\e
 
 ＃────────
 ＃■メニュー
@@ -95,23 +106,23 @@
 \q[:-O 質問φ・不具合報告デース,web拍手]
 
 \q[X-( なんでもないよ,なんでもないよ]
-\1\q[:-D お話聞きマース！,話しかける]\_l[,@3]
+\1\q[:-D お話聞きマース！,話しかける]\n[half]
 \![*]（季節イベント）
 \_q
 
-＊メインメニュー
-\0（Mセリフ）
-\_q
-\q[X-D リッスン！,なにかはなして]\_l[,@3]
-\q[:-p リピート！,さっきの話をもう一度]\_l[,@3]
-\q[;-) インターバル！,喋る頻度変更]\_l[,@3]
-\q[:-D チェンジユアネーム！,名前を教える]\_l[,@3]
-\q[:-O センドメッセージ！,web拍手]
-
-\q[X-( キャンセル,なんでもないよ]
-\1\q[:-D アンサー！,話しかける]\_l[,@3]
-\![*]（季節イベント）
-\_q
+＃＊メインメニュー
+＃\0（Mセリフ）
+＃\_q
+＃\q[X-D リッスン！,なにかはなして]\_l[,@3]
+＃\q[:-p リピート！,さっきの話をもう一度]\_l[,@3]
+＃\q[;-) インターバル！,喋る頻度変更]\_l[,@3]
+＃\q[:-D チェンジユアネーム！,名前を教える]\_l[,@3]
+＃\q[:-O センドメッセージ！,web拍手]
+＃
+＃\q[X-( キャンセル,なんでもないよ]
+＃\1\q[:-D アンサー！,話しかける]\n[half]
+＃\![*]（季節イベント）
+＃\_q
 
 ＠Mセリフ
 \s[5]なんざんショ？
@@ -126,8 +137,12 @@
 \0\s[24]OMG！\e
 
 ＠季節イベント
-（whenlist、（現在月）==
-、１、\q[ハッピーニューイヤー！,新年の挨拶]
+（whenlist、（現在月）月（現在日）日==
+、１月１日、\q[ハッピーニューイヤー！,新年の挨拶]
+、１月２日、\q[ハッピーニューイヤー！,新年の挨拶]
+、１月３日、\q[ハッピーニューイヤー！,新年の挨拶]
+、２月１４日、\q[今日はバレンタイン,バレンタインデー]
+、なし
 ）
 
 ＃────────
@@ -180,42 +195,10 @@
 \![open,inputbox,nickname]
 
 ＊nickname
-（set,ユーザ名,（Reference1））
+＄ユーザ名	（Reference1）
 \0\s[106]ん～……\s[5]（ユーザ名）！\w3 （ユーザ名）でどうですカ？\w9
-\s[105]キュートでしょ？\e
-
-＃────────
-＃■web拍手
-＃────────
-＊web拍手
-\0\s[105]ドンドン送ってくださいネー？
-\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+\s[105]キュートでしょ？
 \e
-
-＃────────
-＃■Resources
-＃────────
-＠homeurl
-https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
-＠sakura.portalbuttoncaption
-配布サイト
-＠callghostrootbutton.caption
-パーティーターイムφ！
-＠vanishbutton.visible
-0
-
-＃────────
-＃■ポータル
-＃────────
-＊sakura.portalsites
-ほっとぺっぱぁ団
-http://ghosthacking.webcrow.jp/index.html
-
-
-＊sakura.portalsites
-連絡フォーム
-https://goo.gl/forms/qJhnaKjUfVtcOWSk1
-
 
 ＃────────
 ＃■コミュニケート
@@ -257,3 +240,63 @@ OMG！\w3 足の指ガー！\e
 \s[105]\c今年もよろしくお願いしマース！\_w[1000]
 \s[5]\c今年はもっと（ユーザ名）と仲良くなりたいデース。
 \e
+
+＊バレンタインデー
+＞バレンタイン二年目	（バレンタイン初回）&&（バレンタイン初回年）!=（現在年）
+＄バレンタイン初回	１
+＄バレンタイン初回年	（現在年）
+\0\s[5]Hey,（ユーザ名）！\w5
+今日はValentine Dayデース！\w5
+
+\s[105]ワタシになにかgift...贈り物とかあるんじゃないんですカ？\_w[1200]
+\c・・・・・・\s[102]What！？\w5
+
+日本では、女が男にchocolateをpresentsする？！\_w[1200]
+\s[24]\cOh my goodness......なんてこったい。\w5
+ワタシの国とは正反対デース。
+\e
+
+＊バレンタイン二年目
+\0\s[105]Hey,（ユーザ名）！\w5
+今日はValentine Dayデース！\w5
+
+\s[100]というワケで・・・\_w[1200]
+\s[5]\cPresents for You！\w5
+
+（ユーザ名）にチョコあげるデース！\w5
+\s[134]お店で買ったものデスけど・・・。\_w[1200]
+\s[135]\cでも、マゴコロ100%の本命デース！
+\e
+
+＃────────
+＃■web拍手
+＃────────
+＊web拍手
+\0\s[105]ドンドン送ってくださいネー？
+\![open,inputbox,拍手送信内容,-1,いいね！,--limit=1000]
+\e
+
+＃────────
+＃■Resources
+＃────────
+＠homeurl
+https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
+＠sakura.portalbuttoncaption
+配布サイト
+＠callghostrootbutton.caption
+パーティーターイムφ！
+＠vanishbutton.visible
+0
+
+＃────────
+＃■ポータル
+＃────────
+＊sakura.portalsites
+ほっとぺっぱぁ団
+http://ghosthacking.webcrow.jp/index.html
+
+
+＊sakura.portalsites
+連絡フォーム
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1
+
