@@ -196,7 +196,8 @@ install.txtがミスしてるみたいデスね。\e
 ＃■ネットワーク更新
 ＃────────
 ＊OnUpdateCheckComplete	（Reference0）==changed
-\0\s[100]（ユーザ名）、更新があるみたいデース！\e
+\0\s[100]（ユーザ名）、更新があるみたいデース！
+\e
 
 ＊OnUpdateBegin
 \0\s[105]更新チェックもガーティにお任せ！\w5
@@ -325,8 +326,11 @@ install.txtがミスしてるみたいデスね。\e
 ＃■入力
 ＃────────
 ＊OnUserInput
+＞空打ちされた	（compare,（Reference1）,timeout）
 ＞空打ちされた	（is_empty,（Reference1））
-＞（Reference0）
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+\e
 
 ＊空打ちされた
 \0\s[24]何も書かれてないデース……。\e
