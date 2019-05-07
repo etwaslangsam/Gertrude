@@ -1,10 +1,4 @@
 
-＃────────
-＃■つつき反応
-＃────────
-＊OnMouseDoubleClick	（compare,（Reference3）,0）
-＞（Reference4）つつかれ
-＞メインメニュー
 
 ＃────────
 ＃■タイムイベント
@@ -259,6 +253,8 @@ install.txtがミスしてるみたいデスね。\e
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
+＞なにかキーが押された
+\e
 
 ＊rが押された
 ＄辞書リロード	実行
@@ -267,6 +263,76 @@ install.txtがミスしてるみたいデスね。\e
 ＊tが押された
 ＄r_talk	（）
 （r_talk）
+
+＊backが押された
+（r_talk）
+
+＊mが押された
+＞メインメニュー
+\e
+
+＊returnが押された
+\0\s[30]Oops！
+\e
+
+＊spaceが押された
+\0\s[5]spaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaace!!
+\e
+
+＊upが押された
+\0\s[5]OH！
+Princessみたいに持ち上げてくだサーイ！
+\e
+
+＊downが押された
+\0\s[131]Oh......
+押し倒されちゃいマシタ……。
+\e
+
+＊leftが押された
+\0\s[109]Southpaw！
+\e
+
+＊rightが押された
+\0\s[27]Right成敗！
+\e
+
+＊escapeが押された
+\0\s[102]What！？
+\![set,windowstate,minimize]
+
+＊insertが押された
+\0\s[101]こんな所でinsertしろだなんテ……。\w5
+\s[131]（ユーザ名）はBeast……ケダモノデース。
+\e
+
+＊pauseが押された
+\0（choice,\s[5],\s[105]）（Reference0）が押され
+\e
+
+＊eが押された
+\0（choice,\s[5],\s[105]）eはeatのeデース！\w5
+食べるの大好きデース！
+\e
+
+＊bが押された
+\0（choice,\s[5],\s[105]）bはbeefのbデース！\w5
+やっぱりBeefがNo.1デース！
+\e
+
+＊cが押された
+\0\s[5]chickenと言えばKentucky Fried Chicken！\w5
+
+\s[105]つまりchickenのcはKFCのcデース！
+\e
+
+＊jが押された
+\0（choice,\s[5],\s[105]）jはJapanのjデース！
+\e
+
+＊なにかキーが押された
+\0（choice,\s[5],\s[105]）（Reference0）が押されたデース！
+\e
 
 ＃────────
 ＃■メールチェック

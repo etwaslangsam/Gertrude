@@ -1,3 +1,10 @@
+＃────────
+＃■つつき反応
+＃────────
+＊OnMouseDoubleClick
+＞（Reference4）つつかれ	（compare,（Reference3）,0）
+＞メインメニュー	（compare,（Reference3）,0）
+\e
 
 ＃────────
 ＃■耳つつき
