@@ -1,5 +1,3 @@
-
-
 ＃────────
 ＃■タイムイベント
 ＃────────
@@ -85,12 +83,10 @@ I'm ベリーベリー スリーピィ・・・。\e
 ......zzZZZ\_w[1200]
 \s[34]\c・・・んあ？\_w[1200]
 \s[22]\c（ユーザ名）！？\w5
-\s[5]グッモーニン！
-\e
+\s[5]グッモーニン！\e
 
 ＊OnDisplayPowerStatus	（Reference0）
-\0\s[105]Hi,（ユーザ名）！
-\e
+\0\s[105]Hi,（ユーザ名）！\e
 
 ＃────────
 ＃■選択肢
@@ -253,8 +249,6 @@ install.txtがミスしてるみたいデスね。\e
 ＃────────
 ＊OnKeyPress
 ＞（Reference0）が押された
-＞なにかキーが押された
-\e
 
 ＊rが押された
 ＄辞書リロード	実行
@@ -269,33 +263,26 @@ install.txtがミスしてるみたいデスね。\e
 
 ＊mが押された
 ＞メインメニュー
-\e
 
 ＊returnが押された
-\0\s[30]Oops！
-\e
+\0\s[30]Oops！\e
 
 ＊spaceが押された
-\0\s[5]spaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaace!!
-\e
+\0\s[5]spaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaace!!\e
 
 ＊upが押された
 \0\s[5]OH！
-Princessみたいに持ち上げてくだサーイ！
-\e
+Princessみたいに持ち上げてくだサーイ！\e
 
 ＊downが押された
 \0\s[131]Oh......
-押し倒されちゃいマシタ……。
-\e
+押し倒されちゃいマシタ……。\e
 
 ＊leftが押された
-\0\s[109]Southpaw！
-\e
+\0\s[109]Southpaw！\e
 
 ＊rightが押された
-\0\s[27]Right成敗！
-\e
+\0\s[27]Right成敗！\e
 
 ＊escapeが押された
 \0\s[102]What！？
@@ -303,36 +290,26 @@ Princessみたいに持ち上げてくだサーイ！
 
 ＊insertが押された
 \0\s[101]こんな所でinsertしろだなんテ……。\w5
-\s[131]（ユーザ名）はBeast……ケダモノデース。
-\e
+\s[131]（ユーザ名）はBeast……ケダモノデース。\e
 
 ＊pauseが押された
-\0（choice,\s[5],\s[105]）（Reference0）が押され
-\e
+\0（choice,\s[5],\s[105]）（Reference0）が押され\e
 
 ＊eが押された
 \0（choice,\s[5],\s[105]）eはeatのeデース！\w5
-食べるの大好きデース！
-\e
+食べるの大好きデース！\e
 
 ＊bが押された
 \0（choice,\s[5],\s[105]）bはbeefのbデース！\w5
-やっぱりBeefがNo.1デース！
-\e
+やっぱりBeefがNo.1デース！\e
 
 ＊cが押された
 \0\s[5]chickenと言えばKentucky Fried Chicken！\w5
 
-\s[105]つまりchickenのcはKFCのcデース！
-\e
+\s[105]つまりchickenのcはKFCのcデース！\e
 
 ＊jが押された
-\0（choice,\s[5],\s[105]）jはJapanのjデース！
-\e
-
-＊なにかキーが押された
-\0（choice,\s[5],\s[105]）（Reference0）が押されたデース！
-\e
+\0（choice,\s[5],\s[105]）jはJapanのjデース！\e
 
 ＃────────
 ＃■メールチェック
