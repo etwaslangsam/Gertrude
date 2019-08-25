@@ -399,18 +399,6 @@ Princessみたいに持ち上げてくだサーイ！\e
 \0\s[100]音声がONになりまシタ。\e
 
 ＃────────
-＃■バグ報告
-＃────────
-＊拍手送信内容
-\![execute,http-post,http://clap.webclap.com/clap.php?id=etwaslangsam,--param=message_body="ガーティ＠（Reference1）",--async=webclap]
-
-＊OnExecuteHTTPComplete	（Reference1）==webclap
-\0\s[105]サンキューね、（ユーザ名）！
-
-＊OnExecuteHTTPFailure	（Reference1）==webclap
-\0\s[24]Sorry ……失敗してしまいましタ。
-
-＃────────
 ＃バッテリーイベント
 ＃────────
 ＊OnBatteryLow

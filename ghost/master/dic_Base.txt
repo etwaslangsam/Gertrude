@@ -173,8 +173,7 @@ Thank you for asking me！
 ＃────────
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
-＠sakura.portalbuttoncaption
-配布サイト
+
 ＠callghostrootbutton.caption
 パーティーターイムφ！
 ＠vanishbutton.visible
@@ -189,18 +188,12 @@ http://ghosthacking.webcrow.jp/index.html
 
 
 ＊sakura.portalsites
-連絡フォーム
+連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
 ＃────────
 ＃■単語群
 ＃────────
-＠スティーブ
-スティーヴン～キング
-スティーブン～スピルバーグ
-スティーブン～セガール
-スティーブ～ジョブズ
-
 ＠UMA
 モスマン
 スレンダーマン

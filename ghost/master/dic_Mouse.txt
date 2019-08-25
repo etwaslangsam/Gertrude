@@ -3,7 +3,7 @@
 ＃────────
 ＊OnMouseDoubleClick
 ＞（Reference4）つつかれ	（Reference3）==0
-＞メインメニュー	（Reference3）==0
+＞（Reference3）つつかれ	（Reference3）==0
 
 ＃────────
 ＃■耳つつき
