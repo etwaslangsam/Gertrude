@@ -59,8 +59,7 @@ I'm ベリーベリー スリーピィ・・・。\e
 ＃■バルーン変更
 ＃────────
 ＊OnBalloonChange
-\0\s[5]Cooooooooooool!
-\e
+\0\s[5]Cooooooooooool!\e
 
 ＃────────
 ＃■最小化解除
@@ -186,8 +185,7 @@ install.txtがミスしてるみたいデスね。\e
 ＃■ネットワーク更新
 ＃────────
 ＊OnUpdateCheckComplete	（Reference0）==changed
-\0\s[100]（ユーザ名）、更新があるみたいデース！
-\e
+\0\s[100]（ユーザ名）、更新があるみたいデース！\e
 
 ＊OnUpdateBegin
 \0\s[105]更新チェックもガーティにお任せ！\w5
@@ -198,13 +196,13 @@ install.txtがミスしてるみたいデスね。\e
 \0\s[100]（Reference0）個のファイルが更新されてマース。
 
 
-＊OnUpdateComplete	（Reference0）==none
+＊OnUpdateComplete
+＞更新されてなかった	（Reference0）==none
+\0\s[5]ミッションコンプリート！\e
+
+＊更新されてなかった
 \0\s[3]Hmm……。\w5
 更新されてないみたいデスね。\e
-
-＊OnUpdateComplete	（Reference0）==changed
-\0\s[5]ミッションコンプリート！\w5ね！\e
-
 
 ＊OnUpdateFailure
 ＞（Reference0）で失敗
@@ -367,21 +365,19 @@ Princessみたいに持ち上げてくだサーイ！\e
 ＃■入力
 ＃────────
 ＊OnUserInput
-＞空打ちされた	（compare,（Reference1）,timeout）
 ＞空打ちされた	（is_empty,（Reference1））
 ＄（Reference0）	（Reference1）
 ＞（Reference0）を教えてもらった
-\e
 
 ＊空打ちされた
 \0\s[24]何も書かれてないデース……。\e
 
-
-＊OnUserInputCancel	（compare,（Reference1）,timeout）
-\0\s[24]（ユーザ名）？\e
-
-＊OnUserInputCancel	（compare,（Reference1）,close）
+＊OnUserInputCancel
+＞入力タイムアウト	（compare,（Reference1）,timeout）
 \0\s[102]閉じちゃいマスよ？\e
+
+＊入力タイムアウト
+\0\s[24]（ユーザ名）？\e
 
 
 ＊OnCommunicate	（compare,（Reference0）,user）
