@@ -132,6 +132,12 @@ Cotton candy!\w5 Takoyaki!\w5 Baked corn!\w5
 \0\s[24]Ugh......\s[109]Fucking HotI\e
 
 ”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+”‚XŒŽ
+”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+”–‚XŒŽ
+”\0
+
+”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
 ”‚P‚QŒŽ
 ”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
 –‚P‚QŒŽ	iŒ»Ý“újƒ‚Q‚R
