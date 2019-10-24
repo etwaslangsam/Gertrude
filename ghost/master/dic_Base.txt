@@ -2,13 +2,14 @@
 ＄文「＊」の重複回避	直前、起動中
 ＄単語群「＊」の重複回避	直前、トーク中
 ＄自動挿入ウェイトタイプ	一般
+＄なでられ反応回数	４５
 
 ＃────────
 ＃■初回起動
 ＃────────
 ＊OnFirstBoot
-＄次のトーク	自己紹介
 \![enter,passivemode]
+＄次のトーク	自己紹介
 \0\s[100]※前回までのあらすじ。\w9
 
 山で罠にかかっていた狐を逃してやった。\w5
@@ -104,6 +105,8 @@
 ＃────────
 ＊OnClose
 ＄全タイマ解除	実行
+＄頭なで回数	
+＄胸つつき回数	
 ＄r_talk	
 ＞深夜終了	（現在時）＜５
 ＞朝終了	（現在時）＜１０
@@ -142,6 +145,8 @@ Don't worry！\_w[1000]
 ＊OnGhostChanging
 ＞再読込する	（Reference0）==ガーティ
 ＄全タイマ解除	実行
+＄頭なで回数	
+＄胸つつき回数	
 ＄r_talk	
 \0\s[5]Next Ghost is （Reference0）！\_w[1000]
 
@@ -177,6 +182,41 @@ https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 パーティーターイムφ！
 ＠vanishbutton.visible
 0
+
+＃────────
+＃■おすすめ
+＃────────
+＊sakura.recommendsites
+NHK WORLD-JAPAN
+https://www3.nhk.or.jp/nhkworld/en/news/
+
+
+＊sakura.recommendsites
+NEWS WEB EASY
+https://www3.nhk.or.jp/news/easy/
+
+
+＊sakura.recommendsites
+やさしい日本語
+http://human.cc.hirosaki-u.ac.jp/kokugo/EJ1a.htm
+
+＊sakura.recommendsites
+-
+
+＊sakura.recommendsites
+コカφ・コーラ
+https://www.amazon.co.jp/dp/B004Y9IXZW/ref=cm_sw_r_tw_dp_U_x_BHSRDbD4W788A
+
+
+＊sakura.recommendsites
+カルビー ピザポテト BIG
+https://www.amazon.co.jp/dp/B00CLOELMG/ref=cm_sw_r_tw_dp_U_x_6KSRDbHB6FKJZ
+
+
+＊sakura.recommendsites
+UHA味覚糖 忍者めし梅かつお味
+https://www.amazon.co.jp/dp/B005Q4KLZY/ref=cm_sw_r_tw_dp_U_x_iZSRDbN9NMAPF
+
 
 ＃────────
 ＃■ポータル

@@ -1,71 +1,24 @@
 ＃────────
-＃■タイムイベント
-＃────────
-＊OnSurfaceRestore
-\1\s[10]\0\s[100]
-
-＊OnMinuteChange
-＞見切れ	（Reference1）
-＞時報	（compare,（現在分）,0）
-
-＊見切れ
-＄見切れてる	1
-\0\s[3]・・・・・・。\e
-
-＊OnOffscreen
-＞見切れ	（見切れてる）==0
-＄見切れてる	
-\e
-
-＊時報
-＞（現在時）時
-
-＊０時
-\0\s[24]oh......もう０時デス・・・。\w9
-I'm ベリーベリー スリーピィ・・・。\e
-
-＊６時
-\0\s[5]グッモーニン エブリワン！\w9
-朝はKelloggのシリアルで決まりデース！\_w[1200]
-\s[105]\c（シリアル台詞）\e
-
-＊１２時
-\0\s[5]１２時デース！\w9
-今日のランチはなんですカー？\e
-
-＊１８時
-\0\s[100]１８時デス。\w9
-・・・・・・\s[24]疲れてないデスよ？\e
-
-
-＠シリアル台詞
-グゥーレイトォ！
-もう我慢出来ない！！
-ぼくのようにでっかくなろう！
-
-＃────────
 ＃■シェル変更
 ＃────────
 ＊OnShellChanging
-＞（Reference0）に変更する
-\0\s[135]見ちゃダメよ～？\e
+\0\s[5]衣装チェンジするデース！\_w[1000]\e
 
 ＊OnShellChanged
-＞（Reference0）に変更した
-\0\s[5]ハァーイ！\w9
-どうデスカー？\e
+\0\s[105]どうデスか？\w5 似合ってる？\e
 
 ＃────────
 ＃■バルーン変更
 ＃────────
 ＊OnBalloonChange
-\0\s[5]Cooooooooooool!\e
+\0\s[5]バルーン「（Reference0）」デース！\w5
+Wow！\w5 クール！\e
 
 ＃────────
 ＃■最小化解除
 ＃────────
 ＊OnWindowStateRestore
-\0\s[24]急に隠れろなんて……ワッツ ハップン？
+\0\s[24]暗くて狭かったデース・・・。\e
 
 ＃────────
 ＃■スクリーンセーバー
@@ -88,36 +41,113 @@ I'm ベリーベリー スリーピィ・・・。\e
 \0\s[105]Hi,（ユーザ名）！\e
 
 ＃────────
+＃■入力
+＃────────
+＊OnCommunicate
+≫「　（Reference1）	（compare,（Reference0）,user）
+＞メモを読む	（compare,（Reference1）,メモ）
+＞メモする	（count,（Reference1）,メモ　）
+\0\s[103]パ・・・パードゥン？\e
+
+＊メモする
+＄メモ	（erase_first,（Reference1）,メモ　）
+\0\s[5]ＯＫ！\w5 メモしました！\e
+＊メモを読む
+\0\s[105]メモを読みマース！\w5\n
+（メモ）
+
+＊OnUserInput
+＞空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊空打ちされた
+\0\s[24]何も書かれてないデース・・・。\e
+
+＊OnUserInputCancel
+＞入力タイムアウト	（compare,（Reference1）,timeout）
+\0\s[102]閉じちゃいマスよ？\e
+
+＊入力タイムアウト
+\0\s[24]（ユーザ名）？\e
+
+＃────────
+＃■タイムイベント
+＃────────
+＊OnMinuteChange
+＞見切れ	（Reference1）
+
+＊見切れ
+＄見切れてる	1
+\0\s[3]・・・・・・。\e
+
+＊OnOffscreen
+＞見切れ	（見切れてる）==0
+＄見切れてる	
+
+＊OnHourTimeSignal
+＄手動セーブ	実行
+\![set,trayballoon,--icon=info,--title=（現在時）時デース！,--text=ロリコンの俺が罠にかかっていた狐を助けたら金髪巨乳外国人JKになって嫁に来た件。,--timeout=3]
+＞（現在時）時
+
+＊０時
+\0\s[24]oh......もう０時デス・・・。\w9
+I'm ベリーベリー スリーピィ・・・。\e
+
+＊６時
+\0\s[5]グッモーニン エブリワン！\w9
+朝はKelloggのシリアルで決まりデース！\_w[1200]
+\s[105]\c（シリアル台詞）\e
+
+＊１２時
+\0\s[5]１２時デース！\w9
+今日のランチはなんですカー？\e
+
+＊１８時
+\0\s[100]１８時デス。\w9
+・・・・・・\s[24]疲れてないデスよ？\e
+
+＠シリアル台詞
+グゥーレイトォ！
+もう我慢出来ない！！
+ぼくのようにでっかくなろう！
+
+＃────────
 ＃■選択肢
 ＃────────
-＃＊OnChoiceSelect
-＃＄選択ＩＤ	（Reference0）
-＃＞（Reference0）
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+\0\s[24]『（Reference0）』 Not Found.\e
 
 ＊OnChoiceTimeout
 \0\s[34]（ユーザ名）？
 
 ＊OnAnchorSelect
 ＞（Reference0）
+\0\s[24]『（Reference0）』 Not Found.\e
 
 ＃────────
-＃■時計合わせ
+＃■サーフェスイベント
 ＃────────
-＊OnSNTPBegin
-\0\s[105]クロックの修理デスね？\w5
-任せてくだサーイ！
+＊OnSurfaceRestore
+\1\s[10]\0\s[100]
 
-＊OnSNTPCompare
-（when,（Reference3）==0,\0\s[24]オーゥ……ピッタリじゃないですカ……。\e,\6）
+＃────────
+＃■マウスイベント
+＃────────
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0
 
-＊OnSNTPCorrect
-\0\s[5]（Reference2）
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	３
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
 
-ミッションコンプリート！\w5デース！\e
-
-＊OnSNTPFailure
-\0\s[24]ソーリィ……。
-うまく出来ないみたいデース……。\e
+＊ころころカウンタ初期化
+＄ころころカウンタ	
 
 ＃────────
 ＃■インストール反応
@@ -130,32 +160,27 @@ I'm ベリーベリー スリーピィ・・・。\e
 \0（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしましタ。\e
 
 ＊shellをインストール
-\0\s[102]OMG！\w5 これを私に？\w5
-\s[100]センキュー、（ユーザ名）！\w5\s[-1](ｷﾞｭｰｯ)\e
+\0\s[5]Shell『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！\e
 
 ＊ghostをインストール
-\s[5]（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）！\w5
-ウェルカーム！\w3 歓迎しマース！
-\0\s[102]Oh！\w5
-喜びすぎて分身しちゃったデース！\e
-
+\0\s[5]Ghost『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！
+ウェルカーム！\w3 歓迎しマース！\e
 
 ＊balloonをインストール
-\0\s[5]このバルーンは何色デスか？\w5 黄色デスかー？\w5
-第四の壁オーバーできマス？\e
+\0\s[5]Balloon『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！\e
 
 
 ＊OnInstallFailure
 ＞（Reference0）でインストール失敗
-\0\s[24],ソーリィ……。\w5
+\0\s[24]ソーリィ・・・。\w5
 （Reference0）で失敗しましタ。\e
 
 ＊extractionでインストール失敗
-\0\s[24]OMG……。\w5
-ファイルがブロウクンして無理みたいデース……。\e
+\0\s[24]OMG......\w5
+ファイルがブロウクンして無理みたいデース。\e
 
 ＊invalid typeでインストール失敗
-\0\s[24]Hmm……。\w5
+\0\s[24]Hmm......\w5
 install.txtがミスしてるみたいデスね。\e
 
 ＊artificialでインストール失敗
@@ -168,45 +193,64 @@ install.txtがミスしてるみたいデスね。\e
 \s[30]ちゃんと渡してあげなきゃダメですヨ？\e
 
 ＃────────
-＃■ダウンロード反応
+＃■ファイルドロップイベント
+＃────────
+＊OnUpdatedataCreating
+\0\s[105]Updateファイルですネ？\w5
+\s[5]任せておいてくだサーイ！\_w[1000]
+
+＊OnUpdatedataCreated
+\0\s[105]サクセス！\w9
+\s[5]更新デスカ？\w5 お疲れさまでーす！\e
+
+＊OnNarCreating
+\0\s[100]NARファイルですネ。\w5
+\s[5]箱に詰めるだけの簡単なお仕事デース！\_w[1000]
+
+＊OnNarCreated
+\0\s[36]出来ましタ。\w5
+\s[103]べ、別に何も隠してないデスよ……？\e
+
+＃────────
+＃■URLドロップイベント
 ＃────────
 ＊OnURLDropping
-\0\s[105]ダウンロードもガーティにお任せネ！
+\0\s[106]Now Downloading......\e
 
 ＊OnURLDropped
-\0\s[5]フィニッシュしたデース！\w5
-（Reference0）にありますヨ～。
+\0\s[105]Download Completed！\n
+（Reference0）\e
 
 ＊OnURLDropFailure
-\0\s[24]Oh……ダウンロードに失敗したデス。
-「（Reference1）」が悪いデース。
+\0\s[24]Download Failure.\n
+（Reference1）\e
 
 ＃────────
 ＃■ネットワーク更新
 ＃────────
-＊OnUpdateCheckComplete	（Reference0）==changed
+＊OnUpdateCheckComplete
+＞更新あり	（Reference0）==changed
+＊更新あり
 \0\s[100]（ユーザ名）、更新があるみたいデース！\e
 
 ＊OnUpdateBegin
-\0\s[105]更新チェックもガーティにお任せ！\w5
-（ユーザ名）、目を離しちゃNoだからネ？\w9
-
+\0\s[105]Update Now！\_w[1000]
 
 ＊OnUpdateReady
-\0\s[100]（Reference0）個のファイルが更新されてマース。
-
+\0\s[100]（Reference0） ｆile's Update.\e
 
 ＊OnUpdateComplete
 ＞更新されてなかった	（Reference0）==none
-\0\s[5]ミッションコンプリート！\e
+\0\s[100]update done.\e
 
 ＊更新されてなかった
-\0\s[3]Hmm……。\w5
-更新されてないみたいデスね。\e
+\0\s[36]更新されてないみたいデス。\e
+
 
 ＊OnUpdateFailure
 ＞（Reference0）で失敗
-\0\s[24]『（Reference0）』？\w5 でダメみたいデース……。\e
+\0\s[24]Update Failure.\n
+（Reference0）\e
 
 ＊timeoutで失敗
 \0\s[24]タイムアウトしたデース……。\e
@@ -223,89 +267,24 @@ install.txtがミスしてるみたいデスね。\e
 中断デスか？\e
 
 ＃────────
-＃■ファイル作成反応
+＃■時計合わせ
 ＃────────
-＊OnUpdatedataCreating
-\0\s[105]Updateファイルですネ？\w5
-\s[5]任せておいてくだサーイ！\_w[1000]
+＊OnSNTPBegin
+\0\s[105]クロックの修理デスね？\w5
+任せてくだサーイ！
 
-＊OnUpdatedataCreated
-\0\s[105]サクセス！\w9
-\s[5]更新デスカ？\w5 お疲れさまでーす！
+＊OnSNTPCompare
+＞時計ズレなし	（Reference3）==0
+\6
+＊時計ズレなし
+\0\s[102]ぴったりデース！\e
 
-＊OnNarCreating
-\0\s[100]NARファイルですネ。\w5
-\s[5]箱に詰めるだけの簡単なお仕事デース！\_w[1000]
+＊OnSNTPCorrect
+\0\s[5]ミッションコンプリート！\w5デース！\e
 
-＊OnNarCreated
-\0\s[36]出来ましタ。\w5
-\s[103]べ、別に何も隠してないデスよ……？
-
-
-＃────────
-＃■キー入力
-＃────────
-＊OnKeyPress
-＞（Reference0）が押された
-
-＊rが押された
-＄辞書リロード	実行
-\0\s[105]私のリロードはレヴォリューションでーす！\e
-
-＊tが押された
-＞（現在月）	（乱数０～５）==３
-（）
-
-
-＊mが押された
-＞メインメニュー
-
-＊returnが押された
-\0\s[30]Oops！\e
-
-＊spaceが押された
-\0\s[5]spaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaace!!\e
-
-＊upが押された
-\0\s[5]OH！
-Princessみたいに持ち上げてくだサーイ！\e
-
-＊downが押された
-\0\s[131]Oh......
-押し倒されちゃいマシタ……。\e
-
-＊leftが押された
-\0\s[109]Southpaw！\e
-
-＊rightが押された
-\0\s[27]Right成敗！\e
-
-＊escapeが押された
-\0\s[102]What！？
-\![set,windowstate,minimize]
-
-＊insertが押された
-\0\s[101]こんな所でinsertしろだなんテ……。\w5
-\s[131]（ユーザ名）はBeast……ケダモノデース。\e
-
-＊pauseが押された
-\0（choice,\s[5],\s[105]）（Reference0）が押され\e
-
-＊eが押された
-\0（choice,\s[5],\s[105]）eはeatのeデース！\w5
-食べるの大好きデース！\e
-
-＊bが押された
-\0（choice,\s[5],\s[105]）bはbeefのbデース！\w5
-やっぱりBeefがNo.1デース！\e
-
-＊cが押された
-\0\s[5]chickenと言えばKentucky Fried Chicken！\w5
-
-\s[105]つまりchickenのcはKFCのcデース！\e
-
-＊jが押された
-\0（choice,\s[5],\s[105]）jはJapanのjデース！\e
+＊OnSNTPFailure
+\0\s[24]ソーリィ……。
+うまく出来ないみたいデース……。\e
 
 ＃────────
 ＃■メールチェック
@@ -360,39 +339,11 @@ Princessみたいに持ち上げてくだサーイ！\e
 ：……解析失敗。
 ：サイトのデザインが変更されたのかな？　最新版のヘッドラインセンサがあれば入れ替えてくださいね。
 
-
 ＃────────
-＃■入力
+＃■ネットワークイベント
 ＃────────
-＊OnUserInput
-＞空打ちされた	（is_empty,（Reference1））
-＄（Reference0）	（Reference1）
-＞（Reference0）を教えてもらった
-
-＊空打ちされた
-\0\s[24]何も書かれてないデース……。\e
-
-＊OnUserInputCancel
-＞入力タイムアウト	（compare,（Reference1）,timeout）
-\0\s[102]閉じちゃいマスよ？\e
-
-＊入力タイムアウト
-\0\s[24]（ユーザ名）？\e
-
-
-＊OnCommunicate	（compare,（Reference0）,user）
-＞（Reference1）
-
-＃────────
-＃音声認識/音声合成
-＃────────
-＊OnVoiceRecognitionWord
-＞メインメニュー	（compare,（Reference1）,ガーティ）
-＞（Reference1）
-\0\s[28]Sorry...うまくリスニングできませんでシタ。\e
-
-＊OnSpeechSynthesisStatus	（compare,（Reference0）,1）
-\0\s[100]音声がONになりまシタ。\e
+＊OnNetworkHeavy
+\0\s[103]こいつぁヘヴィだぜ・・・デース。\e
 
 ＃────────
 ＃バッテリーイベント
@@ -413,7 +364,41 @@ Princessみたいに持ち上げてくだサーイ！\e
 （Reference0）％になりマシタ。\e
 
 ＃────────
-＃ネットワークの状態
+＃音声認識/音声合成
 ＃────────
-＃＊OnNetworkStatusChange	（compare,（Reference0）,offline）
-＃\0\s[100]ネットワークが切断されマシタ。\e
+＊OnVoiceRecognitionWord
+＞メインメニュー	（compare,（Reference1）,ガーティ）
+＞（Reference1）
+\0\s[28]Sorry...うまくリスニングできませんでシタ。\e
+
+＊OnSpeechSynthesisStatus	（compare,（Reference0）,1）
+\0\s[100]音声がONになりまシタ。\e
+
+＃────────
+＃■キー入力
+＃────────
+＊OnKeyPress
+＞（Reference0）が押された
+
+＊rが押された
+＄辞書リロード	実行
+\0\s[105]私のリロードはレヴォリューションでーす！\e
+
+＊tが押された
+＞（現在月）	（乱数０～５）==３
+（）
+
+＊mが押された
+＞メインメニュー
+
+＊sが押された
+＄手動セーブ	実行
+\0\s[105]セーブしまシタ！\e
+
+＊escapeが押された
+\0\s[102]What！？
+\![set,windowstate,minimize]
+
+＊cが押された
+\![open,communicatebox]
+＞話しかける
