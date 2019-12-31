@@ -74,6 +74,30 @@ WowI\w5 ƒN[ƒ‹I\e
 ”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
 ”¡ƒ^ƒCƒ€ƒCƒxƒ“ƒg
 ”„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+–OnSecondChange
+„iŒ»ÝŒŽjŒŽiŒ»Ý“új“úiŒ»ÝŽžjŽžiŒ»Ý•ªj•ªiŒ»Ý•bj•b
+
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚O•b
+\0\s[5]10I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚P•b
+\0\s[5]9I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚Q•b
+\0\s[5]8I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚R•b
+\0\s[5]7I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚S•b
+\0\s[5]6I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚T•b
+\0\s[5]5I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚U•b
+\0\s[5]4I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚V•b
+\0\s[5]3I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚W•b
+\0\s[5]2I
+–‚P‚QŒŽ‚R‚P“ú‚Q‚RŽž‚T‚X•ª‚T‚X•b
+\0\s[5]1I
+
 –OnMinuteChange
 „Œ©Ø‚ê	iReference1j
 
@@ -91,8 +115,12 @@ WowI\w5 ƒN[ƒ‹I\e
 „iŒ»ÝŽžjŽž
 
 –‚OŽž
+„iŒ»ÝŒŽjŒŽiŒ»Ý“új“ú‹N“®
 \0\s[24]oh......‚à‚¤‚OŽžƒfƒXEEEB\w9
 I'm ƒxƒŠ[ƒxƒŠ[ ƒXƒŠ[ƒsƒBEEEB\e
+
+–‚PŒŽ‚P“ú‹N“®
+„‚PŒŽ‹N“®
 
 –‚UŽž
 \0\s[5]ƒOƒbƒ‚[ƒjƒ“ ƒGƒuƒŠƒƒ“I\w9
