@@ -153,29 +153,30 @@
 ＃季節イベント
 ＃────────
 ＊バレンタインデー
-＞バレンタイン二年目	（バレンタイン初回）&&（バレンタイン初回年）!=（現在年）
-＄バレンタイン初回	１
-＄バレンタイン初回年	（現在年）
-\0\s[5]Hey,（ユーザ名）！\w5
-今日はValentine Dayデース！\w5
-
-\s[105]ワタシになにかgift...贈り物とかあるんじゃないんですカ？\_w[1200]
-\c・・・・・・\s[102]What！？\w5
-
-日本では、女が男にchocolateをpresentsする？！\_w[1200]
-\s[24]\cOh my goodness......なんてこったい。\w5
-ワタシの国とは正反対デース。\e
-
-＊バレンタイン二年目
 \0\s[105]Hey,（ユーザ名）！\w5
-今日はValentine Dayデース！\w5
+今日はValentine Dayデース！\w9\n
+\s[100]というワケで……\s[5]Presents for You！\w5
+（ユーザ名）にチョコあげるデース！\s[135]
+\1φ（受け取ったチョコにはカードが添えられているφ）\w5\n[half]
+φ（開けるとそこには『（バレンタインカード）』と書かれていたφ）\e
 
-\s[100]というワケで・・・\_w[1200]
-\s[5]\cPresents for You！\w5
+＠バレンタインカード
+\_a[Love]Love,Gertrude\_a
+\_a[SAY YES]SAY YES\_a
+\_a[PICK ME]PICK ME\_a
+\_a[BE MINE]BE MINE\_a
+\_a[Be My Valentine]Be My Valentine\_a
 
-（ユーザ名）にチョコあげるデース！\w5
-\s[134]お店で買ったものデスけど・・・。\_w[1200]
-\s[135]\cでも、マゴコロ100%の本命デース！\e
+＊Love
+\1\f[italic,1]\f[height,105%]ガートルードより愛を込めて\e
+＊SAY YES
+\1\f[italic,1]\f[height,105%]イエスと言って\e
+＊PICK ME
+\1\f[italic,1]\f[height,105%]私を選んで\e
+＊BE MINE
+\1\f[italic,1]\f[height,105%]私のものになって\e
+＊Be My Valentine
+\1\f[italic,1]\f[height,105%]恋人になって\e
 
 ＊ハロウィン
 \0\s[5]Happy Halloween！\_w[1000]\n
