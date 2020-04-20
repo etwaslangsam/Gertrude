@@ -1,3 +1,23 @@
+＊OnCacheRestore
+＞OnSatoriLoad
+＊OnSatoriLoad
+＄文「＊」の重複回避	直前、起動中
+＄単語群「＊」の重複回避	直前、トーク中
+＄自動挿入ウェイトタイプ	一般
+＄なでられ反応回数	４５
+＄手動セーブ	実行
+
+＊OnCacheSuspend
+＞OnSatoriUnload
+＊OnSatoriUnload
+＄全タイマ解除	実行
+＄頭なで回数	
+＄胸つつき回数	
+＄r_talk	
+＄バレンタイン初回	
+＄バレンタイン初回年	
+＄手動セーブ	実行
+
 ＃────────
 ＃■シェル変更
 ＃────────
@@ -154,12 +174,6 @@ I'm ベリーベリー スリーピィ・・・。\e
 ＊OnAnchorSelect
 ＞（Reference0）
 \0\s[24]『（Reference0）』 Not Found.\e
-
-＃────────
-＃■サーフェスイベント
-＃────────
-＊OnSurfaceRestore
-\1\s[10]\0\s[100]
 
 ＃────────
 ＃■マウスイベント
@@ -411,10 +425,6 @@ install.txtがミスしてるみたいデスね。\e
 ＊OnKeyPress
 ＞（Reference0）が押された
 
-＊rが押された
-＄辞書リロード	実行
-\0\s[105]私のリロードはレヴォリューションでーす！\e
-
 ＊tが押された
 ＞（現在月）	（乱数０～５）==３
 （）
@@ -433,3 +443,11 @@ install.txtがミスしてるみたいデスね。\e
 ＊cが押された
 \![open,communicatebox]
 ＞話しかける
+
+＃────────
+＃
+＃────────
+＊OnTalk
+＞（Reference1）	（Reference0）
+＞（現在月）	（乱数０～５）==３
+（）
