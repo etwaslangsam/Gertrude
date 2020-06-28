@@ -12,9 +12,9 @@ readme,readme.txt
 menu.background.bitmap.filename,bg.png
 menu.foreground.bitmap.filename,bg.png
 
-menu.background.font.color.r,238
-menu.background.font.color.g,228
-menu.background.font.color.b,197
+menu.background.font.color.r,0
+menu.background.font.color.g,0
+menu.background.font.color.b,0
 
 menu.foreground.font.color.r,72
 menu.foreground.font.color.g,69
