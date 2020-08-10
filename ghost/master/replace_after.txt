@@ -4,3 +4,4 @@
 …	…\w3
 ‥	‥\w3
 ・	・\w3
+（はーと）	\f[color,hotpink]\f[name,Meiryo UI]\_u[0x2665]\f[default]
