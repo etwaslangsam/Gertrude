@@ -1,1 +1,2 @@
 .git\
+ghost\master\dicAnchor.txt

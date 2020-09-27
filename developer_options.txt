@@ -2,3 +2,4 @@
 ghost/master/satori_savedata.txt,nonar,noupdate
 ghost/master/satori_savebackup.txt,nonar,noupdate
 shell/G.E.R.T.Y/,nonar,noupdate
+shell/MFfes/,nonar,noupdate
