@@ -464,8 +464,7 @@ install.txtがミスしてるみたいデスね。\e
 ＞メインメニュー
 
 ＊sが押された
-＄手動セーブ	実行
-\0\s[105]セーブしまシタ！\e
+＞アクション
 
 ＊escapeが押された
 \0\s[102]What！？
@@ -480,3 +479,47 @@ install.txtがミスしてるみたいデスね。\e
 ＊OnTalk
 ＞（Reference1）	（Reference0）
 （）
+
+＃────────
+＃
+＃────────
+＊OnWebClap
+\![open,inputbox,拍手送信内容,,--limit=996]
+\0\e
+
+＊拍手送信内容を教えてもらった
+\0\_q（拍手送信内容）\_q
+\1（この内容で送信します）
+\_q
+\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容が空打ちされた]
+\_q\e
+
+＊SendClap
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠（拍手送信内容）",--async=webclap]
+＄拍手送信内容	
+
+＊簡易拍手1
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠Cool!",--async=webclap]
+＄拍手送信内容	
+＊簡易拍手2
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠Awesome!",--async=webclap]
+＄拍手送信内容	
+＊簡易拍手3
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠Cute!",--async=webclap]
+＄拍手送信内容	
+
+＊拍手送信内容が空打ちされた
+＄拍手送信内容	
+\0φ（中断しますφ）\e
+
+＊OnExecuteHTTPComplete
+＞拍手送信完了	（Reference1）==webclap
+＊拍手送信完了
+＞（選択ラベル）が送信された
+\0（送信完了φ。ありがとうございますφ。）\e
+
+＊OnExecuteHTTPFailure
+＞拍手送信失敗	（Reference1）==webclap
+
+＊拍手送信失敗
+\0φ（（Reference4）φ）\e
