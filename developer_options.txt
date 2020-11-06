@@ -5,3 +5,4 @@ shell/G.E.R.T.Y/,nonar,noupdate
 shell/MFfes/,nonar,noupdate
 ghost/master/profile/,nonar,noupdate
 ghost/master/var/,nonar,noupdate
+.gitignore,nonar,noupdate
