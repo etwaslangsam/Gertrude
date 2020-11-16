@@ -150,19 +150,11 @@ Don't worry！\_w[1000]
 ＃────────
 ＊OnGhostChanging
 ＞再読込する	（Reference0）==ガーティ
-＞交代反応
+＞終了
 
 ＊OnGhostChanged
 ＞再読込した	（Reference0）==ガーティ
-＞交代反応
-
-＊交代反応
-\0\s[25]Live long and prosper.
-長寿と繁栄を\_w[1000]
-
-＊交代反応
-\0\s[100]May the Force be with you.
-フォースと共にあらんことを\_w[1000]
+＞起動
 
 ＃────────
 ＊再読込する
