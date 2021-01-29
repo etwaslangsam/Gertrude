@@ -2,7 +2,6 @@ file,delete.txte2b8ca7725923a4bb486f5c4646371fasize=35
 file,developer_options.txt4d9b1c3f335477a228390529d8bb39adsize=283
 file,install.txt5ab5c09943915290885728c9274665d4size=142
 file,readme.txt925f6db25988094c1556152870a905cfsize=1387
-file,updates2.dau.bak0ecf664a65e84737e1f78f8d17feea18size=4415
 file,ghost/master/descript.txtd12e48de65987f79196eb5fa3889943bsize=816
 file,ghost/master/dic_Base.txtee0bd73ef964ddafa009441d69163b9asize=5846
 file,ghost/master/dic_Comm.txt719dc8acdb82d1ca9401696bf3c23cf8size=3630
