@@ -13,9 +13,6 @@
 ＊OnCacheSuspend
 ＞OnSatoriUnload
 ＊OnSatoriUnload
-＄全タイマ解除	実行
-＄頭なで回数	
-＄胸つつき回数	
 ＄r_talk	
 ＄バレンタイン初回	
 ＄バレンタイン初回年	
@@ -30,6 +27,8 @@
 \0\s[5]衣装チェンジするデース！\_w[1000]\e
 
 ＊OnShellChanged
+＄現在シェル	（Reference0）
+＄手動セーブ	実行
 ＞（Reference0）に着替えた
 \0\s[105]どうデスか？\w5 似合ってる？\e
 
@@ -54,6 +53,9 @@ Wow！\w5 クール！\e
 ＃────────
 ＃■最小化解除
 ＃────────
+＊OnWindowStateMinimize
+＄手動セーブ	実行
+
 ＊OnWindowStateRestore
 ＄手動セーブ	実行
 ＞最小化解除
@@ -123,8 +125,12 @@ Wow！\w5 クール！\e
 \0\s[24]何も書かれてないデース‥‥。\e
 
 ＊OnUserInputCancel
+＞入力キャンセル		（compare,（Reference1）,close）
 ＞入力タイムアウト	（compare,（Reference1）,timeout）
 \0\s[102]閉じちゃいマスよ？\e
+
+＊入力キャンセル
+\0\s[3]Cancelデスね。\e
 
 ＊入力タイムアウト
 \0\s[24]（ユーザ名）？\e
@@ -157,16 +163,18 @@ Wow！\w5 クール！\e
 \0\s[5]1
 
 ＊OnMinuteChange
-＞（現在月）月（現在日）日起動	（現在時）==０&&（現在分）==０
 ＞見切れ	（Reference1）
-＞時報	（現在分）==０&&（時報設定）==１
+＞時報	（現在分）==０&&（時報設定）
+
+＊OnHourTimeSignal
+＞（現在月）月（現在日）日起動	（現在時）==０
 
 ＊見切れ
 ＄見切れてる	1
 \0\s[3]‥‥‥‥。\e
 
 ＊OnOffscreen
-＞見切れ	（見切れてる）==0
+＞見切れ	（変数「見切れてる」の存在）==0
 ＄見切れてる	
 
 ＊時報
@@ -219,8 +227,11 @@ I'm ベリーベリー スリーピィ‥‥。\e
 ＃────────
 ＃■マウスイベント
 ＃────────
+＊OnMouseClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0&&（is_empty,（Reference4））==0
+
 ＊OnMouseDoubleClick
-＞（Reference3）（Reference4）つつかれ	（Reference5）==0
+＞（Reference3）つつかれ	（Reference5）==0&&（is_empty,（Reference4））
 
 ＊OnMouseWheel
 ＄ころころカウンタ=（ころころカウンタ）+1
@@ -311,24 +322,23 @@ install.txtがミスしてるみたいデスね。\e
 ＃────────
 ＃■ネットワーク更新
 ＃────────
-＊OnUpdateCheckComplete
-＞更新あり	（Reference0）==changed
-＊更新あり
-\0\s[100]（ユーザ名）、更新があるみたいデース！\e
-
 ＊OnUpdateBegin
-\0\s[105]Update Now！\_w[1000]
+\0\s[105]Update Now！\w3
 
 ＊OnUpdateReady
 \0\s[100]（Reference0） ｆile's Update.\e
 
+＊OnUpdate.OnDownloadBegin
+\0（times,（Reference2）,\c／\c─\c＼）
+
 ＊OnUpdateComplete
-＞更新されてなかった	（Reference0）==none
+＞更新（Reference0）
+
+＊更新changed
 \0\s[100]update done.\e
 
-＊更新されてなかった
+＊更新none
 \0\s[36]更新されてないみたいデス。\e
-
 
 ＊OnUpdateFailure
 ＞（Reference0）で失敗
@@ -519,13 +529,13 @@ install.txtがミスしてるみたいデスね。\e
 \0φ（中断しますφ）\e
 
 ＊OnExecuteHTTPComplete
-＞拍手送信完了	（Reference1）==webclap
+＞拍手送信完了		（compare,（Reference1）,webclap）
 ＊拍手送信完了
 ＞（選択ラベル）が送信された
 \0（送信完了φ。ありがとうございますφ。）\e
 
 ＊OnExecuteHTTPFailure
-＞拍手送信失敗	（Reference1）==webclap
+＞拍手送信失敗		（compare,（Reference1）,webclap）
 
 ＊拍手送信失敗
 \0φ（（Reference4）φ）\e

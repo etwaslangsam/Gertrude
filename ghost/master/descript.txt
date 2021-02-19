@@ -4,7 +4,6 @@ type,ghost
 craftman,etwaslangsam
 craftmanw,‚Ä‚É‚Ä‚É
 craftmanurl,http://ghosthacking.webcrow.jp/index.html
-homeurl,https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 readme,readme.txt
 sakura.name,ƒK[ƒeƒB
 kero.name,—z‹C‚ÅŒy‰õ‚ÈBGM
