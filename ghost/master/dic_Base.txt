@@ -215,21 +215,12 @@
 
 
 ＊OnInstallFailure
-＞（Reference0）でインストール失敗
-\0\s[24]ソーリィ‥‥。\w5
-（Reference0）で失敗しましタ。\e
-
-＊extractionでインストール失敗
-\0\s[24]OMG......\w5
-ファイルがブロウクンして無理みたいデース。\e
-
-＊invalid typeでインストール失敗
-\0\s[24]Hmm......\w5
-install.txtがミスしてるみたいデスね。\e
-
-＊artificialでインストール失敗
-\0\s[102]ワッツ？！\e
-
+（whenlist，（Reference0）==
+	，extraction，\0\s[24]OMG......\w5 ファイルがブロウクンして無理みたいデース。\e
+	，invalid type，\0\s[24]Hmm......\w5install.txtがミスしてるみたいデスね。\e
+	，artificial，\0\s[102]ワッツ？！\e
+）
+\0\s[24]ソーリィ‥‥。\w5\n（Reference0）で失敗しましタ。\e
 
 ＊OnInstallRefuse
 \0\s[102]（ユーザ名）！\w5
