@@ -2,3 +2,4 @@
 .gitignore
 ghost\master\dicAnchor.txt
 ghost\master\dic_Menu.txt
+ghost\master\dic_Event.txt

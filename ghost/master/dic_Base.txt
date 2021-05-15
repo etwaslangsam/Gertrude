@@ -1,6 +1,438 @@
+＊OnCacheRestore
+＞OnSatoriLoad
+＊OnSatoriLoad
+＄文「＊」の重複回避	有効、起動中
+＄単語群「＊」の重複回避	直前、トーク中
+＄自動挿入ウェイトタイプ	一般
+＄なでられ反応回数	４５
+＄会話時サーフェス戻し	有効
+＄デフォルトサーフェス0	100
+＄デフォルトサーフェス1	10
+＄手動セーブ	実行
+
+＊OnCacheSuspend
+＞OnSatoriUnload
+＊OnSatoriUnload
+＄r_talk	
+＄バレンタイン初回	
+＄バレンタイン初回年	
+＄デフォルトサーフェス2	
+＄手動セーブ	実行
+
+＃────────■シェル変更
+＊OnShellChanging
+＞（Reference0）に着替える
+\0\s[5]衣装チェンジするデース！\_w[1000]\e
+
+＊OnShellChanged
+（set,現在シェル,（Reference0））（set,手動セーブ,実行）
+（whenlist，（Reference0）==
+	，ムチムチフォックスフェスティバル，\0\s[135]Hey,（ユーザ名）！\w5 \s[101]どうですかこの水着。刺激的でショ？\w5\n\s[5]どこかに泳ぎに行きまショウ！
+	，\0\s[105]どうデスか？\w5 似合ってる？\e
+）
+
 ＃────────
-＃■初回起動
+＊OnSurfaceRestore
+\0\s[（デフォルトサーフェス0）]\e
+
+＃────────■バルーン変更
+＊OnBalloonChange
+\0\s[5]バルーン「（Reference0）」デース！\w5 Wow！\w5 クール！\e
+
+＃────────■最小化解除
+＊OnWindowStateMinimize
+＄手動セーブ	実行
+
+＊OnWindowStateRestore
+（set,手動セーブ,実行）\![raise,最小化解除]
+
+＊最小化解除
+\0\s[24]oh‥‥（ユーザ名）‥‥。\w5
+ドラマがいい所だったのに‥‥。\e
+
+＊最小化解除
+\0\s[5]Bye mom.\_w[1000]\n
+\s[100]（ユーザ名）。\w5
+\s[105]向こうにいるマミーとtellしてたデース。\w5
+\s[5]元気そうでよかったデース！\e
+
+＊最小化解除
+\0\s[106]wow‥‥yum yum‥‥\w5
+\s[24]ｹﾞﾌｰ\w9\n
+\s[2]（substr,（ユーザ名）,0,1）、（ユーザ名）！？\w5
+\s[133]べ、別に何も食べてないデスよ‥‥？\e
+
+＊最小化解除
+\0\s[106]Zzz‥‥\w5 Zzzz‥‥\w9\n
+\s[24]Hmmm‥‥\w5 \s[102]oh！\w3 （ユーザ名）？\e
+
+＃────────■スクリーンセーバー
+＊OnScreenSaverEnd
+\0\s[5]（ユーザ名）！\w5 おかえりなさいデース！\e
+
+＊OnSysSuspend
+\0\s[106]\e
+
+＊OnSysResume
+\0\s[106]...zZZ
+......zzZZZ\_w[1200]
+\s[34]\c‥‥んあ？\_w[1200]
+\s[22]\c（ユーザ名）！？\w5
+\s[5]グッモーニン！\e
+
+＊OnDisplayPowerStatus	（Reference0）
+\0\s[105]Hi,（ユーザ名）！\e
+
+＃────────■入力
+＊OnCommunicate
+≫「　（Reference1）	（compare,（Reference0）,user）
+＞メモを読む	（compare,（Reference1）,メモ）
+＞メモする	（count,（Reference1）,メモ　）
+\0\s[103]パ‥‥パードゥン？\e
+
+＊メモする
+＄メモ	（erase_first,（Reference1）,メモ　）
+\0\s[5]ＯＫ！\w5 メモしました！\e
+＊メモを読む
+\0\s[105]メモを読みマース！\w5\n
+（メモ）
+
+＊OnUserInput
+＞空打ちされた	（is_empty,（Reference1））
+＄（Reference0）	（Reference1）
+＞（Reference0）を教えてもらった
+
+＊空打ちされた
+\0\s[24]何も書かれてないデース‥‥。\e
+
+＊OnUserInputCancel
+＞入力キャンセル		（compare,（Reference1）,close）
+＞入力タイムアウト	（compare,（Reference1）,timeout）
+\0\s[102]閉じちゃいマスよ？\e
+
+＊入力キャンセル
+\0\s[3]Cancelデスね。\e
+
+＊入力タイムアウト
+\0\s[24]（ユーザ名）？\e
+
+＃────────■タイムイベント
+＊OnSecondChange	（現在月）月（現在日）日（現在時）時（現在分）分==１２月３１日２３時５９分
+（whenlist，（現在秒）==
+	，５０，\0\s[5]10
+	，５１，\0\s[5]9
+	，５２，\0\s[5]8
+	，５３，\0\s[5]7
+	，５４，\0\s[5]6
+	，５５，\0\s[5]5
+	，５６，\0\s[5]4
+	，５７，\0\s[5]3
+	，５８，\0\s[5]2
+	，５９，\0\s[5]1
+）
+
+＊OnMinuteChange
+＞見切れ	（Reference1）==1
+
+＊見切れ
+＄見切れてる	
+\0\s[3]‥‥‥‥。\e
+
+＊OnHourTimeSignal
+＞（現在月）月（現在日）日起動	（現在時）==０
+＞時報	（現在分）＜６&&（時報設定）==１
+
+＊時報	（Sender）==SSP
+（set,手動セーブ，実行）
+\![set,trayballoon,--icon=info,--title=（現在時）時デース！,--text=ロリコンの俺が罠にかかっていた狐を助けたら金髪巨乳外国人JKになって嫁に来た件。,--timeout=3]
+\![raise,時報詳細]
+
+＊時報	（Sender）!=SSP
+\![raise,時報詳細]
+
+＊時報詳細
+（whenlist，（現在時）==
+	，０，\0\s[24]oh......もう０時デス‥‥。\w9\nI'm ベリーベリー スリーピィ‥‥。\e
+	，６，\0\s[5]グッモーニン エブリワン！\w9\n朝はKelloggのシリアルで決まりデース！\_w[1200]\s[105]\c（シリアル台詞）\e
+	，１２，\0\s[5]１２時デース！\w9今日のランチはなんですカー？\e
+	，１８，\0\s[100]１８時デス。\w9\n‥‥‥‥\s[24]疲れてないデスよ？\e
+	，（when、（Sender）!=SSP、\0\s[5]（現在時）時デース！\e）
+）
+
+＠シリアル台詞
+グゥーレイトォ！
+もう我慢出来ない！！
+ぼくのようにでっかくなろう！
+
+＃────────■選択肢
+＊OnChoiceSelect
+＄選択ＩＤ	（Reference0）
+＞（Reference0）
+\0\s[24]『（Reference0）』 Not Found.\e
+
+＊OnChoiceTimeout
+\0\s[34]（ユーザ名）？
+
+＊OnAnchorSelect
+＞（Reference0）
+\0\s[24]『（Reference0）』 Not Found.\e
+
+＃────────■マウスイベント
+＊OnMouseClick	（Reference5）==0
+＞（Reference3）（Reference4）つつかれ	（is_empty,（Reference4））==0
+＞なにかはなして	（is_empty,（Reference4））==1
+
+＊OnMouseDoubleClick	（Reference5）==0
+＞（Reference3）つつかれ	（is_empty,（Reference4））==1
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	３
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	
+
+＃────────■インストール反応
+＊OnInstallBegin
+\0\s[105]インストールもガーティにお任せ！\w9
+
+＊OnInstallComplete
+＞（Reference0）をインストール
+\0（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしましタ。\e
+
+＊shellをインストール
+\0\s[5]Shell『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！\e
+
+＊ghostをインストール
+\0\s[5]Ghost『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！
+ウェルカーム！\w3 歓迎しマース！\e
+
+＊balloonをインストール
+\0\s[5]Balloon『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！\e
+
+
+＊OnInstallFailure
+＞（Reference0）でインストール失敗
+\0\s[24]ソーリィ‥‥。\w5
+（Reference0）で失敗しましタ。\e
+
+＊extractionでインストール失敗
+\0\s[24]OMG......\w5
+ファイルがブロウクンして無理みたいデース。\e
+
+＊invalid typeでインストール失敗
+\0\s[24]Hmm......\w5
+install.txtがミスしてるみたいデスね。\e
+
+＊artificialでインストール失敗
+\0\s[102]ワッツ？！\e
+
+
+＊OnInstallRefuse
+\0\s[102]（ユーザ名）！\w5
+これ「（replace（バイト値,１）（Reference0）（バイト値,１）\（バイト値,１）\\） へ」って書いてありマース！\w5
+\s[30]ちゃんと渡してあげなきゃダメですヨ？\e
+
+＃────────■ファイルドロップイベント
+＊OnUpdatedataCreating
+\0\s[105]Updateファイルですネ？\w5
+\s[5]任せておいてくだサーイ！\_w[1000]
+
+＊OnUpdatedataCreated
+\0\s[105]サクセス！\w9
+\s[5]更新デスカ？\w5 お疲れさまでーす！\e
+
+＊OnNarCreating
+\0\s[100]NARファイルですネ。\w5
+\s[5]箱に詰めるだけの簡単なお仕事デース！\_w[1000]
+
+＊OnNarCreated
+\0\s[36]出来ましタ。\w5
+\s[103]べ、別に何も隠してないデスよ……？\e
+
+＃────────■URLドロップイベント
+＊OnURLDropping
+\0\s[106]Now Downloading......\e
+
+＊OnURLDropped
+\0\s[105]Download Completed！\n
+（Reference0）\e
+
+＊OnURLDropFailure
+\0\s[24]Download Failure.\n
+（Reference1）\e
+
+＃────────■ネットワーク更新
+＊OnUpdateBegin
+\0\s[105]Update Now！\w3
+
+＊OnUpdateReady
+\0\s[100]（Reference0） ｆile's Update.\e
+
+＊OnUpdate.OnDownloadBegin
+\0（times,（Reference2）,\c／\c─\c＼）
+
+＊OnUpdateComplete
+（whenlist，（Reference0）==
+	，changed，\0\s[100]update done.\e
+	，none，\0\s[36]更新されてないみたいデス。\e
+）
+
+＊OnUpdateFailure
+（whenlist，（Reference0）==
+	，timeout，\0\s[24]タイムアウトしたデース……。\e
+	，md5 miss，\0\s[24]md5が一致しませんでしタ……。\w5\n\s[35]Hmm……作者に要連絡デスね。\e
+	，404，\0\s[100]404 Not Foundデース。\e
+	，artificial，\0\s[102]ワッツ？！\w5 中断デスか？\e
+	，\0\s[24]Update Failure.\n\n（Reference0）\e
+）
+
+＃────────■時計合わせ
+＊OnSNTPBegin
+\0\s[105]クロックの修理デスね？\w5
+任せてくだサーイ！
+
+＊OnSNTPCompare
+（whenlist，（Reference0）==
+	，0，\0\s[102]ぴったりデース！\e
+	，\6
+）
+
+＊OnSNTPCorrect
+\0\s[5]ミッションコンプリート！\w5デース！\e
+
+＊OnSNTPFailure
+\0\s[24]ソーリィ……。
+うまく出来ないみたいデース……。\e
+
+＃────────■メールチェック
+＊OnBIFFBegin
+\0\s[105]メールチェックですネ？\w5
+ガーティにお任せアレー！\w9
+
+＊OnBIFFComplete	（Reference0）!=0
+\0\s[5]（Reference0）通のメールが届いてましター！
+
+\q[メーラを開く,メーラを開く]
+\e
+
+＊メーラを開く
+\0\![open,mailer]\e
+
+＊OnBIFFComplete	（Reference0）==0
+\0\s[24]ノーゥ……メールは来てなかったデス。\e
+
+＊OnBIFFFailure
+\0（whenlist,（Reference0）==
+,kick,\s[24]Hmm……ＩＤかパスワードが違うみたいデース。
+,timeout,\s[24]サーバーの応答ナッシン……。\w5\n設定ミスか回線が混んでるみたいデース。
+,メールチェック失敗。\w5\n原因は「（Reference0）」みたいデース……。
+）\e
+
+＃────────■ヘッドライン
+＊OnHeadlinesenseBegin
+\0\s[105]ニュースですネ？\w5\e
+
+＊OnHeadlinesense.OnFind
+\0\b[2]「（Reference0）」
+
+（Reference3）
+
+\q[やめる,なんでもないよ]
+\e
+
+＊OnHeadlinesenseComplete
+：更新されてなかったよ。
+
+＊OnHeadlinesenseFailure
+：ヘッドラインセンス失敗。
+＞（Reference0）によりヘッドラインセンス失敗
+：理由は（Reference0）だそうです。
+＊can't downloadによりヘッドラインセンス失敗
+：ダウンロードできなかったよ。
+＊can't analyzeによりヘッドラインセンス失敗
+：……解析失敗。
+：サイトのデザインが変更されたのかな？　最新版のヘッドラインセンサがあれば入れ替えてくださいね。
+
+＃────────■ネットワークイベント
+＊OnNetworkHeavy
+\0\s[103]こいつぁヘヴィだぜ‥‥デース。\e
+
+＃────────バッテリーイベント
+＊OnBatteryLow
+\0\s[24]バッテリーが（Reference0）％になったデース。\w9
+\s[134]あと（Reference1）時間は持つと思いマス。\e
+
+＊OnBatteryCritical
+\0\s[31]バッテリーが（Reference0）％になりマシタ。\w9
+\s[30]（ユーザ名）、チャージしないんデスカ？\e
+
+＊OnBatteryChargingStart
+\0\s[5]バッテリーのチャージ開始デース！\e
+
+＊OnBatteryChargingStop
+\0\s[100]チャージ終了デース。\w9
+（Reference0）％になりマシタ。\e
+
+＃────────音声認識/音声合成
+＊OnVoiceRecognitionWord
+＞メインメニュー	（compare,（Reference1）,ガーティ）
+＞（Reference1）
+\0\s[28]Sorry...うまくリスニングできませんでシタ。\e
+
+＊OnSpeechSynthesisStatus	（compare,（Reference0）,1）
+\0\s[100]音声がONになりまシタ。\e
+
+＃────────■キー入力
+＊OnKeyPress
+（whenlist，（Reference0）==
+	，c，\![raise,話しかける]
+	，t，\![raise,なにかはなして]
+	，m，\![raise,メインメニュー]
+	，s，\![raise,アクション]
+	，escape，\0\s[102]What！？\![set,windowstate,minimize]
+）
+
 ＃────────
+＊OnTalk
+＞（Reference1）	（Reference0）
+（）
+
+＃────────
+＊OnWebClap
+\![open,inputbox,拍手送信内容,,--limit=996]\0\e
+
+＊拍手送信内容を教えてもらった
+\0\_q（拍手送信内容）\_q
+\1（この内容で送信します）
+\_q
+\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容が空打ちされた]
+\_q\e
+
+＊SendClap
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠（拍手送信内容）",--async=webclap]
+\![raise,拍手内容消去]
+＊簡易拍手
+\![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠（選択ラベル）",--async=webclap]
+\![raise,拍手内容消去]
+
+＊拍手送信内容が空打ちされた
+\0φ（中断しますφ）\![raise,拍手内容消去]\e
+
+＊拍手内容消去
+（set,拍手送信内容,）
+
+＊OnExecuteHTTPComplete	（compare,（Reference1）,webclap）
+＞（選択ラベル）が送信された
+\0（送信完了φ。ありがとうございますφ。）\e
+
+＊OnExecuteHTTPFailure	（compare,（Reference1）,webclap）
+\0φ（（Reference4）φ）\e
+
+＃────────■初回起動
 ＊OnFirstBoot
 \![enter,passivemode]
 ＄次のトーク	自己紹介
@@ -29,13 +461,9 @@
 \s[105]My name is ガートルードいいマース。\w5
 ガーティって呼んでくだサイ。\e
 
-＃────────
-＃■起動
-＃────────
+＃────────■起動
 ＊OnBoot
-＄全タイマ解除	実行
-＄現在シェル	（Reference0）
-（when、（現在月）!=１、（set,正月起動,））
+（set,全タイマ解除,実行）（set,現在シェル,（Reference0））（when、（現在月）!=１、（set,正月起動,））
 ＞（現在月）月（現在日）日起動	（イベント年月日）!=（現在年）（現在月）（現在日）
 ＞発情起動	（count、x１x２x、x（現在月）x）&&（compare,（乱数１～４）,２）
 ＞深夜起動	（現在時）＜５
@@ -136,9 +564,8 @@
 \s[4]\cふー‥‥ふー‥‥。\w5
 今日のところは諦めてやるデース‥‥。\e
 
-＃────────
-＃■終了
-＃────────
+
+＃────────■終了
 ＊OnClose
 ＄頭なで回数	
 ＄胸つつき回数	
@@ -174,9 +601,7 @@ Don't worry！\_w[1000]
 ＊終了
 \0\s[5]BFN！\_w[1000]
 
-＃────────
-＃■切り替え反応
-＃────────
+＃────────■切り替え反応
 ＊OnGhostChanging
 ＞再読込する	（Reference0）==ガーティ
 ＄頭なで回数	
@@ -193,12 +618,10 @@ Don't worry！\_w[1000]
 ＊再読込した
 \0\s[5]いいお湯でしター。\e
 
-＃────────
-＃■メニュー
-＃────────
+
+＃────────■メニュー
 ＊0つつかれ
-\0（Mセリフ）\w9
-＞メインメニュー
+\0（Mセリフ）\w9\![raise,メインメニュー]
 
 ＠Mセリフ
 \s[5]なんざんショ？
@@ -215,13 +638,13 @@ Don't worry！\_w[1000]
 ■名前 [ （ユーザ名） ]\n[half]
  \![*]\q[CHANGEする,名前を教える]\n
 ■時報 [ （when,（時報設定）==１,ON,OFF） ]\n[half]
- \![*]\q[ON,時報オン] / \q[OFF,時報オフ]\n
+ \![*]\q[ON,時報の設定] / \q[OFF,時報の設定]\n
 ■季節イベント\n[half]
  \![*]（季節イベント）\n
 \q[CANCEL,なんでもないよ]
 \1■WebClap
  \![*]\q[コメントを入力する,OnWebClap]\n[half]
- \![*]\q[Cool!,簡易拍手1] \![*]\q[Awesome!,簡易拍手2] \![*]\q[Cute!,簡易拍手3]
+ \![*]\q[Cool!,簡易拍手] \![*]\q[Awesome!,簡易拍手] \![*]\q[Cute!,簡易拍手]
 \_q\e
 
 ＊なんでもないよ
@@ -237,29 +660,18 @@ Don't worry！\_w[1000]
 	、なし
 ）
 
-＃────────
-＃■トーク
-＃────────
+＃────────■トーク
 ＊なにかはなして
 （）
 
-＃────────
-＃■喋り頻度
-＃────────
+＃────────■喋り頻度
 ＊６０秒おき
-＄喋り間隔	６０秒
-＄喋り間隔誤差	５０％
-＄手動セーブ	実行
-\0\s[5]yap!\w5 オートでトークしマース！\e
+（set,喋り間隔,６０秒）（set,喋り間隔誤差,５０％）（set,手動セーブ,実行）\0\s[5]yap!\w5 オートでトークしマース！\e
 
 ＊０秒おき
-＄喋り間隔	０秒
-＄手動セーブ	実行
-\0\s[25]では、メニューからオーダーされたらトークしマス。\e
+（set,喋り間隔,０秒）（set,喋り間隔誤差,５０％）（set,手動セーブ,実行）\0\s[25]では、メニューからオーダーされたらトークしマス。\e
 
-＃────────
-＃■ユーザ名
-＃────────
+＃────────■ユーザ名
 ＊名前を教える
 \![open,inputbox,ユーザ名]
 \0\s[5]私が素敵なニックネームを付けてあげマース！\e
@@ -268,22 +680,14 @@ Don't worry！\_w[1000]
 \0\s[106]ん～……\s[5]（ユーザ名）！\w3 （ユーザ名）でどうですカ？\w9
 \s[105]キュートでしょ？\e
 
-＃────────
-＃時報
-＃────────
-＊時報オン
-＄時報設定	１
-＄手動セーブ	実行
-＞設定変更
+＃────────時報
+＊時報の設定
+（whenlist，（時報設定）==
+	，１，（set,時報設定,０）
+	，０，（set,時報設定,１）
+）（set,手動セーブ,実行）\![raise,設定変更]
 
-＊時報オフ
-＄時報設定	０
-＄手動セーブ	実行
-＞設定変更
-
-＃────────
-＃季節イベント
-＃────────
+＃────────季節イベント
 ＊ポッキーの日
 \0\s[5]Hi,（ユーザ名）！\w5
 \s[105]今日はPOCKYの日というらしいデスね！\w9\n
@@ -331,9 +735,8 @@ Don't worry！\_w[1000]
 \s[5]大人なガーティはＢＢＱパーティーしマース！\w9\n
 だから（ユーザ名）、お肉買いに行くデース！\e
 
-＃────────
-＃■Resources
-＃────────
+＃────────■Resources
+
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 
@@ -342,9 +745,7 @@ https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 ＠vanishbutton.visible
 0
 
-＃────────
-＃■おすすめ
-＃────────
+＃────────■おすすめ
 ＊sakura.recommendsites
 NHK WORLD-JAPAN
 https://www3.nhk.or.jp/nhkworld/en/news/
@@ -377,9 +778,7 @@ UHA味覚糖 忍者めし梅かつお味
 https://www.amazon.co.jp/dp/B005Q4KLZY/ref=cm_sw_r_tw_dp_U_x_iZSRDbN9NMAPF
 
 
-＃────────
-＃■ポータル
-＃────────
+＃────────■ポータル
 ＊sakura.portalsites
 ほっとぺっぱぁ団
 http://ghosthacking.webcrow.jp/index.html
@@ -389,9 +788,8 @@ http://ghosthacking.webcrow.jp/index.html
 連絡先
 https://goo.gl/forms/qJhnaKjUfVtcOWSk1
 
-＃────────
-＃■単語群
-＃────────
+
+＃────────■単語群
 ＠UMA
 モスマン
 スレンダーマン
