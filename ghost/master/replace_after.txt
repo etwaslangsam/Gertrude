@@ -5,3 +5,27 @@
 d	d\w3
 E	E\w3
 i‚Í[‚Æj	\f[color,hotpink]\f[name,Meiryo UI]\_u[0x2665]\f[default]
+‚O	12
+‚P	1
+‚Q	2
+‚R	3
+‚S	4
+‚T	5
+‚U	6
+‚V	7
+‚W	8
+‚X	9
+‚P‚Q	12
+‚P‚O	10
+‚P‚P	11
+‚P‚R	1
+‚P‚S	2
+‚P‚T	3
+‚P‚U	4
+‚P‚V	5
+‚P‚W	6
+‚P‚X	7
+‚Q‚O	8
+‚Q‚P	9
+‚Q‚Q	10
+‚Q‚R	11
