@@ -1,0 +1,47 @@
+＠callghostrootbutton.caption
+パーティーターイムφ！
+＠vanishbutton.visible
+0
+
+＃────────■おすすめ
+＊sakura.recommendsites
+NHK WORLD-JAPAN
+https://www3.nhk.or.jp/nhkworld/en/news/
+
+
+＊sakura.recommendsites
+NEWS WEB EASY
+https://www3.nhk.or.jp/news/easy/
+
+
+＊sakura.recommendsites
+やさしい日本語
+http://human.cc.hirosaki-u.ac.jp/kokugo/EJ1a.htm
+
+＊sakura.recommendsites
+-
+
+＊sakura.recommendsites
+コカφ・コーラ
+https://www.amazon.co.jp/dp/B004Y9IXZW/ref=cm_sw_r_tw_dp_U_x_BHSRDbD4W788A
+
+
+＊sakura.recommendsites
+カルビー ピザポテト BIG
+https://www.amazon.co.jp/dp/B00CLOELMG/ref=cm_sw_r_tw_dp_U_x_6KSRDbHB6FKJZ
+
+
+＊sakura.recommendsites
+UHA味覚糖 忍者めし梅かつお味
+https://www.amazon.co.jp/dp/B005Q4KLZY/ref=cm_sw_r_tw_dp_U_x_iZSRDbN9NMAPF
+
+
+＃────────■ポータル
+＊sakura.portalsites
+ほっとぺっぱぁ団
+http://ghosthacking.webcrow.jp/index.html
+
+
+＊sakura.portalsites
+連絡先
+https://goo.gl/forms/qJhnaKjUfVtcOWSk1

@@ -1,0 +1,40 @@
+＃────────■ネットワーク更新
+＠homeurl
+https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
+
+＊OnUpdateBegin
+\0\s[105]Update Now！\w3
+
+＊OnUpdateReady
+\0\s[100]（Reference0） ｆile's Update.\e
+
+＊OnUpdate.OnDownloadBegin
+\0（times,（Reference2）,\c／\c─\c＼）
+
+
+＊OnUpdateComplete
+＞ネットワーク更新（Reference0）
+
+＊ネットワーク更新none
+\0\s[36]更新されてないみたいデス。\e
+
+＊ネットワーク更新changed
+＄辞書リロード	実行
+\0\s[100]update done.\e
+
+
+＊OnUpdateFailure
+＞ネットワーク更新（Reference0）
+\0\s[24]Update Failure.\n\n（Reference0）\e
+
+＊ネットワーク更新timeout
+\0\s[24]タイムアウトしたデース……。\e
+
+＊ネットワーク更新md5 miss
+\0\s[24]md5が一致しませんでしタ……。\w5\n\s[35]Hmm……作者に要連絡デスね。\e
+
+＊ネットワーク更新404
+\0\s[100]404 Not Foundデース。\e
+
+＊ネットワーク更新artificial
+\0\s[102]ワッツ？！\w5 中断デスか？\e
