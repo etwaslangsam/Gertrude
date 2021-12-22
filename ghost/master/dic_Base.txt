@@ -44,7 +44,7 @@
 ＄追加シェル_B初回	１
 \0\s[105]Winter coat of fur！\w5 冬毛デース！\e
 ＊追加シェル_B二回目以降
-\0\s[5]とってもあたたかいデース！\e
+\0\s[5]とってもwarmデース！\e
 
 ＃────────
 ＊OnSurfaceRestore
@@ -348,13 +348,18 @@
 
 ＃────────■キー入力
 ＊OnKeyPress
-（whenlist，（Reference0）==
-	，c，\![raise,話しかける]
-	，t，\![raise,なにかはなして]
-	，m，\![raise,メインメニュー]
-	，s，\![raise,アクション]
-	，escape，\0\s[102]What！？\![set,windowstate,minimize]
-）
+＞（Reference0）が押された
+
+＊cが押された
+＞話しかける
+＊tが押された
+＞なにかはなして
+＊mが押された
+＞メインメニュー
+＊sが押された
+＞アクション
+＊escapeが押された
+\0\s[102]What！？\![set,windowstate,minimize]
 
 ＃────────
 ＊OnTalk
