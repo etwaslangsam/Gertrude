@@ -6,3 +6,4 @@ shell/MFfes/,nonar,noupdate
 ghost/master/profile/,nonar,noupdate
 ghost/master/var/,nonar,noupdate
 .gitignore,nonar,noupdate
+shell/WF/,nonar,noupdate
