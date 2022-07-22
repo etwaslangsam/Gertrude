@@ -12,7 +12,7 @@ kero.seriko.defaultsurface,10
 balloon.defaultsurface,0
 seriko.alignmenttodesktop,bottom
 sakura.seriko.alignmenttodesktop,bottom
-kero.seriko.alignmenttodesktop,bottom
+kero.seriko.alignmenttodesktop,free
 sstp.allowunspecifiedsend,1
 sstp.allowcommunicate,1
 sstp.alwaystranslate,0

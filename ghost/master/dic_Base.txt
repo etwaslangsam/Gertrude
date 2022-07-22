@@ -403,8 +403,21 @@
 （set,拍手送信内容,）
 
 ＊OnExecuteHTTPComplete	（compare,（Reference1）,webclap）
-＞（選択ラベル）が送信された
+＞「（選択ラベル）」が送信された
 \0（送信完了φ。ありがとうございますφ。）\e
+
+＊「いいね！」が送信された
+\0\s[5]サンキュー！\w9\n
+\s[105]（ユーザ名）にたくさん褒めてもらうために、これからもっともっと頑張りマース！\e
+
+＊「好き」が送信された
+\0\s[5]ワタシも（ユーザ名）大好きデース！\w9\n
+\s[105]like\w5 じゃなくて love\w5 デスよね？\e
+
+＊「かわいい」が送信された
+\0\s[5]You made my day!\w9
+（ユーザ名）のおかげで今日はいい日デース！\e
+
 
 ＊OnExecuteHTTPFailure	（compare,（Reference1）,webclap）
 \0φ（（Reference4）φ）\e
