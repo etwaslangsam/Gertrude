@@ -391,20 +391,17 @@
 
 ＊SendClap
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠（拍手送信内容）",--async=webclap]
-\![raise,拍手内容消去]
 ＊簡易拍手
 \![execute,http-post,http://clap.webclap.com/clap.php?id=teniwa,--param=message_body="ガーティ＠（選択ラベル）",--async=webclap]
-\![raise,拍手内容消去]
 
 ＊拍手送信内容が空打ちされた
-\0φ（中断しますφ）\![raise,拍手内容消去]\e
+＄拍手送信内容	
+\0φ（中断しますφ）
 
-＊拍手内容消去
-（set,拍手送信内容,）
-
-＊OnExecuteHTTPComplete	（compare,（Reference1）,webclap）
+＊OnExecuteHTTPComplete	（equal,（Reference1）,webclap）
+＄拍手送信内容	
 ＞「（選択ラベル）」が送信された
-\0（送信完了φ。ありがとうございますφ。）\e
+\0\s[5]送信しマシタ！\e
 
 ＊「いいね！」が送信された
 \0\s[5]サンキュー！\w9\n
@@ -419,5 +416,5 @@
 （ユーザ名）のおかげで今日はいい日デース！\e
 
 
-＊OnExecuteHTTPFailure	（compare,（Reference1）,webclap）
+＊OnExecuteHTTPFailure	（equal,（Reference1）,webclap）
 \0φ（（Reference4）φ）\e
