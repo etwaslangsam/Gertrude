@@ -12,6 +12,7 @@
 ＄ユーザ名	ダーリン
 ＄スコープ切り換え時	\n[half]
 ＄コミュニケートの検索方法	里々
+＄現在シェル	master
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
