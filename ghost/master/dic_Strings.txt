@@ -1,5 +1,6 @@
 ＠callghostrootbutton.caption
 パーティーターイムφ！
+他のゴーストを呼ぶ
 ＠vanishbutton.visible
 0
 
