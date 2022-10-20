@@ -8,3 +8,5 @@ ghost/master/var/,nonar,noupdate
 .gitignore,nonar,noupdate
 shell/WF/,nonar,noupdate
 shell/BEERFOX/,nonar,noupdate
+shell/USA/,nonar,noupdate
+shell/nudist/,nonar,noupdate
