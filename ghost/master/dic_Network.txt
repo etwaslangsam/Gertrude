@@ -37,3 +37,51 @@ https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/
 
 ＊ネットワーク更新artificial
 \0\s[102]ワッツ？！\w5 中断デスか？\e
+
+＃────────
+＠WCM_URL
+https://script.google.com/macros/s/AKfycbxHT6cacuEsMdGulS0c_a29X1pjDu5CUC3BPqAd9_wwskSn9l1oAAaN216XusA9siAX/exec
+＠送信元
+ガーティ
+
+＊OnWebClap
+\![open,inputbox,送信内容,,--limit=996]\0\e
+
+＊送信内容を教えてもらった
+＄メモ	手動コメント
+\0\_q（送信内容）\_q
+\1（この内容で送信します）
+\_q
+\![*]\q[送信する,SendClap] \![*]\q[やめる,拍手送信内容が空打ちされた]
+\_q\e
+
+＊SendClap
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;（送信内容）;（メモ）",--async=webclap,--timeout=5]
+＊簡易拍手
+＄メモ	定形
+\![execute,http-post,（WCM_URL）,--param=message_body="（送信元）;（選択ラベル）;（メモ）",--async=webclap,--timeout=5]
+
+＊拍手送信内容が空打ちされた
+＄拍手送信内容	
+\0φ（中断しますφ）
+
+＊OnExecuteHTTPComplete
+＄送信内容	
+＞「（選択ラベル）」が送信された	（count,（Reference1）,webclap）
+\0\s[5]送信しマシタ！\e
+
+＊「いいね！」が送信された
+\0\s[5]サンキュー！\w9\n
+\s[105]（ユーザ名）にたくさん褒めてもらうために、これからもっともっと頑張りマース！\e
+
+＊「好き」が送信された
+\0\s[5]ワタシも（ユーザ名）大好きデース！\w9\n
+\s[105]like\w5 じゃなくて love\w5 デスよね？\e
+
+＊「かわいい」が送信された
+\0\s[5]You made my day!\w9
+（ユーザ名）のおかげで今日はいい日デース！\e
+
+
+＊OnExecuteHTTPFailure
+\0φ（（Reference4）φ）\e
