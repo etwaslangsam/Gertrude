@@ -1,0 +1,51 @@
+＊OnHeadlinesenseBegin
+\0\s[5]ニュースの時間デース！\e
+
+＊OnHeadlinesense.OnFind
+＞読み上げフェーズ（Reference2）
+
+＊読み上げフェーズFirst
+\0\b[2]（Reference0）\n[half]
+（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+＊読み上げフェーズFirst and Last
+：\b[2]（Reference0）\n[half]
+（Reference3）
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+＊読み上げフェーズLast
+：\b[2]（Reference3）
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+
+＊読み上げフェーズNext
+：\b[2]（Reference3）
+＿続きを読む		
+＿サイトを開く		（Reference1）
+＿やめる		読み上げ中止
+
+
+＊サイトを開く
+\![open,browzer,]
+
+＊読み上げ中止
+：\b[-1]
+
+＊OnHeadlinesenseComplete
+\0\s[36]hmm......\w5更新されてないみたいデスね。\e
+
+＊OnHeadlinesenseFailure
+\0\s[31]ヘッドラインセンス失敗。
+＞OnHeadlinesenseFailure_（Reference0）
+理由は（Reference0）だそうデース。\e
+
+＊OnHeadlinesenseFailure_can't download
+\0\s[24]ダウンロードできなかったデース。\e
+
+＊OnHeadlinesenseFailure_can't analyze
+\0\s[102]‥‥解析失敗デス！？\e

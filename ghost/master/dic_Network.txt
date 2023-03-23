@@ -1,3 +1,7 @@
+＃────────■ネットワークイベント
+＊OnNetworkHeavy
+\0\s[103]こいつぁヘヴィだぜ‥‥デース。\e
+
 ＃────────■ネットワーク更新
 ＠homeurl
 https://raw.githubusercontent.com/etwaslangsam/Gertrude/master/

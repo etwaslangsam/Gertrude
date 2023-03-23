@@ -5,11 +5,9 @@
 ＄単語群「＊」の重複回避	有効、起動中
 ＄自動挿入ウェイトタイプ	里々
 ＄なでられ反応回数	４５
-＄会話時サーフェス戻し	有効
+＄会話時サーフェス戻し	無効
 ＄デフォルトサーフェス0	100
 ＄デフォルトサーフェス1	10
-＄胸つつき回数	0
-＄頭なで回数	0
 
 ＊OnCacheSuspend
 ＞OnSatoriUnload
@@ -18,64 +16,15 @@
 ＄バレンタイン初回	
 ＄バレンタイン初回年	
 ＄デフォルトサーフェス2	
-＄胸つつき回数	
-＄頭なで回数	
-
-＃────────■シェル変更
-＊OnShellChanging
-＞（Reference0）に着替える
-\0\s[5]衣装チェンジするデース！\_w[1000]\e
-
-＊赤裸々狐に着替える
-\0\s[100]\e
-
-＊OnShellChanged
-＄現在シェル	（Reference0）
-＄手動セーブ	実行
-＞（Reference0）に着替えた
-\0\s[105]どうデスか？\w5 似合ってる？\e
-
-＊ムチムチフォックスフェスティバルに着替えた
-＞追加シェル_A二回目以降	（追加シェル_A初回）==１
-＄追加シェル_A初回	１
-\0\s[105]どうですかこの水着？\w5 SEXYでショ？\e
-＊追加シェル_A二回目以降
-\0\s[8]フッフーン。好きデスねぇ、（ユーザ名）。\e
-
-＊こんこんコートに着替えた
-＞追加シェル_B二回目以降	（追加シェル_B初回）==１
-＄追加シェル_B初回	１
-\0\s[105]Winter coat of fur！\w5 冬毛デース！\e
-＊追加シェル_B二回目以降
-\0\s[5]とってもwarmデース！\e
-
-＊ビールフォックス！！に着替えた
-＞追加シェル_C二回目以降	（追加シェル_C初回）==１
-＄追加シェル_C初回	１
-\0\s[5]Hey \w5（ユーザ名）！\w9\n
-今年もサマーシーズンが来ましたネ！\w9
-\s[40]サマーシーズンと言えば～？\w9\n
-\s[39]そう！\w5 BBQ！\w5 ＆ BEER！\w9
-お肉食べて\w1アルコール飲んで\w1ファッキンホットを乗り切りマショー！\e
-＊追加シェル_C二回目以降
-\0\s[39]ツム ヴォール！\w5 プロージット！\e
-
-＊星条旗水着に着替えた
-＞追加シェル_D二回目以降	（追加シェル_D初回）==１
-＄追加シェル_D初回	１
-\0\s[105]ヘーイ！\w9 どーですか（ユーザ名）！\_w[1000]
-コレを見れば一気にロリコンが治ったんじゃないデスか？\_w[1200]\n
-\s[24]‥‥\w5‥‥\w5治らない？\w9 むしろ引いた？\_w[1000]
-hmmm......\w9残念デース。\e
-＊追加シェル_D二回目以降
-\0\s[105]Hooooo！\w9 テンション上がってきたデース！\e
-
-＊赤裸々狐に着替えた
-\0\s[135]母国にあったヌーディストビーチを思い出しマース！\e
 
 ＃────────
 ＊OnSurfaceRestore
-\0\s[（デフォルトサーフェス0）]\e
+＞OnSurfaceRestore_（Reference0）
+＃\0\s[（デフォルトサーフェス0）]\e
+
+＊OnSurfaceRestore_-1
+\0\s[106]Zzz‥‥\w5 Zzzz‥‥\w9\n
+\s[24]Hmmm‥‥\w5 \s[102]oh！\w3 （ユーザ名）？\e
 
 ＃────────■バルーン変更
 ＊OnBalloonChange
@@ -103,10 +52,6 @@ hmmm......\w9残念デース。\e
 \s[24]ｹﾞﾌｰ\w9\n
 \s[2]（substr,（ユーザ名）,0,1）、（ユーザ名）！？\w5
 \s[133]べ、別に何も食べてないデスよ‥‥？\e
-
-＊最小化解除
-\0\s[106]Zzz‥‥\w5 Zzzz‥‥\w9\n
-\s[24]Hmmm‥‥\w5 \s[102]oh！\w3 （ユーザ名）？\e
 
 ＃────────■スクリーンセーバー
 ＊OnScreenSaverEnd
@@ -141,15 +86,15 @@ hmmm......\w9残念デース。\e
 ＊空打ちされた
 \0\s[24]何も書かれてないデース‥‥。\e
 
+
 ＊OnUserInputCancel
-＞入力キャンセル		（compare,（Reference1）,close）
-＞入力タイムアウト	（compare,（Reference1）,timeout）
+＞OnUserInputCancel_（Reference1）
 \0\s[102]閉じちゃいマスよ？\e
 
-＊入力キャンセル
+＊OnUserInputCancel_close
 \0\s[3]Cancelデスね。\e
 
-＊入力タイムアウト
+＊OnUserInputCancel_timeout
 \0\s[24]（ユーザ名）？\e
 
 ＃────────■タイムイベント
@@ -188,44 +133,58 @@ hmmm......\w9残念デース。\e
 ぼくのようにでっかくなろう！
 
 ＃────────■選択肢
-＊OnChoiceSelect
-＄選択ＩＤ	（Reference0）
-＞（Reference0）
+＊OnChoiceSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞（Reference1）
 \0\s[24]『（Reference0）』 Not Found.\e
 
 ＊OnChoiceTimeout
 \0\s[34]（ユーザ名）？
 
-＊OnAnchorSelect
-＞（Reference0）
+＊OnAnchorSelectEx
+＄選択ラベル	（Reference0）
+＄選択ＩＤ	（Reference1）
+＞OnAnchorSelect.URL	（compare_head,（Reference1）,http://）||（compare_head,（Reference1）,https://）
+＞（Reference1）
 \0\s[24]『（Reference0）』 Not Found.\e
 
+＊OnAnchorSelect.URL
+＄スクリプトの一番頭	\C
+\0\j[（Reference1）]
 
 ＃────────■インストール反応
 ＊OnInstallBegin
 \0\s[105]インストールもガーティにお任せ！\w9
 
 ＊OnInstallComplete
-＞（Reference0）をインストール
+＞OnInstallComplete_（Reference0）
 \0（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）をインストールしましタ。\e
 
-＊shellをインストール
+＊OnInstallComplete_shell
 \0\s[5]Shell『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！\e
 
-＊ghostをインストール
+＊OnInstallComplete_ghost
 \0\s[5]Ghost『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！
 ウェルカーム！\w3 歓迎しマース！\e
 
-＊balloonをインストール
+＊OnInstallComplete_balloon
 \0\s[5]Balloon『（replace（バイト値,１）（Reference1）（バイト値,１）\（バイト値,１）\\）』 Install！\e
 
 
 ＊OnInstallFailure
-（whenlist，（Reference0）==
-	，extraction，\0\s[24]OMG......\w5 ファイルがブロウクンして無理みたいデース。\e
-	，invalid type，\0\s[24]Hmm......\w5install.txtがミスしてるみたいデスね。\e
-	，artificial，\0\s[102]ワッツ？！\e
-）
+＞OnInstallFailure_（Reference0）
+
+
+＊OnInstallFailure_extraction
+\0\s[24]OMG......\w5 ファイルがブロウクンして無理みたいデース。\e
+
+＊OnInstallFailure_invalid type
+\0\s[24]Hmm......\w5install.txtがミスしてるみたいデスね。\e
+
+＊OnInstallFailure_artificial
+\0\s[102]ワッツ？！\e
+
 \0\s[24]ソーリィ‥‥。\w5\n（Reference0）で失敗しましタ。\e
 
 ＊OnInstallRefuse
@@ -262,6 +221,22 @@ hmmm......\w9残念デース。\e
 \0\s[24]Download Failure.\n
 （Reference1）\e
 
+＃────────■マウスイベント
+＊OnMouseClick	（is_empty，（Reference4））&&（equal，（Reference5），0）
+＞なにかはなして	（Clicktalk）
+
+＊OnMouseDoubleClick
+＞（Reference3）（Reference4）つつかれ	（Reference5）==0
+
+＊OnMouseWheel
+＄ころころカウンタ=（ころころカウンタ）+1
+＄ころころカウンタ初期化タイマ	３
+＞（Reference3）（Reference4）上ころ	（Reference2）>0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）下ころ	（Reference2）<0&&（ころころカウンタ）>3
+＞（Reference3）（Reference4）ころころ	（ころころカウンタ）>3
+
+＊ころころカウンタ初期化
+＄ころころカウンタ	
 
 ＃────────■時計合わせ
 ＊OnSNTPBegin
@@ -305,34 +280,7 @@ hmmm......\w9残念デース。\e
 ,メールチェック失敗。\w5\n原因は「（Reference0）」みたいデース……。
 ）\e
 
-＃────────■ヘッドライン
-＊OnHeadlinesenseBegin
-\0\s[105]ニュースですネ？\w5\e
 
-＊OnHeadlinesense.OnFind
-\0\b[2]「（Reference0）」
-
-（Reference3）
-
-\q[やめる,なんでもないよ]
-\e
-
-＊OnHeadlinesenseComplete
-：更新されてなかったよ。
-
-＊OnHeadlinesenseFailure
-：ヘッドラインセンス失敗。
-＞（Reference0）によりヘッドラインセンス失敗
-：理由は（Reference0）だそうです。
-＊can't downloadによりヘッドラインセンス失敗
-：ダウンロードできなかったよ。
-＊can't analyzeによりヘッドラインセンス失敗
-：……解析失敗。
-：サイトのデザインが変更されたのかな？　最新版のヘッドラインセンサがあれば入れ替えてくださいね。
-
-＃────────■ネットワークイベント
-＊OnNetworkHeavy
-\0\s[103]こいつぁヘヴィだぜ‥‥デース。\e
 
 ＃────────バッテリーイベント
 ＊OnBatteryLow
@@ -361,17 +309,24 @@ hmmm......\w9残念デース。\e
 
 ＃────────■キー入力
 ＊OnKeyPress
-＞（Reference0）が押された
+＞OnKeyPress_（Reference0）
 
-＊cが押された
+＊OnKeyPress_c
 ＞話しかける
-＊tが押された
+
+＊OnKeyPress_t
 ＞なにかはなして
-＊mが押された
+
+＊OnKeyPress_m
 ＞メインメニュー
-＊sが押された
+
+＊OnKeyPress_r
+＄辞書リロード	実行
+
+＊OnKeyPress_s
 ＞アクション
-＊escapeが押された
+
+＊OnKeyPress_escape
 \0\s[102]What！？\![set,windowstate,minimize]
 
 ＃────────
