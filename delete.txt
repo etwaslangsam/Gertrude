@@ -1,3 +1,5 @@
 .git\
 .gitignore
 ghost\master\dicAnchor.txt
+ghost\master\dic_End.txt
+ghost\master\dic_Start.txt
