@@ -1,3 +1,4 @@
+charset,Shift_JIS
 file,delete.txtc2a72739c767e29666662781aa84879fsize=101
 file,developer_options.txt0061b157292121e2a51709e22a967871size=397
 file,install.txt5ab5c09943915290885728c9274665d4size=142
@@ -7,11 +8,11 @@ file,ghost/master/descript.txta56e8293e37c7b99657188090de79a0esize=821
 file,ghost/master/dic_Base.txtc109278bf6285bb101c4b823b66d1982size=8163
 file,ghost/master/dic_Change.txt99b533bcf0d46eb74b1bdde316c7fe12size=1516
 file,ghost/master/dic_Comm.txt0c37be5409030d5479dceb2ce8978d37size=6047
-file,ghost/master/dic_Menue.txt66883c9cc310ef956008a19eff99f719size=4377
+file,ghost/master/dic_Menue.txtdf1f5f3103089ddec5bcb9c6bb63783bsize=4401
 file,ghost/master/dic_Mouse.txt714f9d5031f86d080def416af19314efsize=5601
 file,ghost/master/dic_Network.txt9afaa2c89cb4fd6c85366652d7ee5fe9size=2320
 file,ghost/master/dic_RSS.txt4cd299fdafdb803800250fbb0643710dsize=1081
-file,ghost/master/dic_Season.txt787cc2384a21f19f94db17de8852996csize=4743
+file,ghost/master/dic_Season.txt8f719b93da03f1478cd7b288840edafasize=6207
 file,ghost/master/dic_ShellChanged.txt6813fbb6769b72d0a294722b7cb7ff17size=1695
 file,ghost/master/dic_StartEnd.txt35a730903f62e88f12b3e1386e71de52size=6090
 file,ghost/master/dic_Strings.txta6bc29e8e0a7235bdb174190e838009asize=1441
