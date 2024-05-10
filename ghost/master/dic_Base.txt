@@ -32,7 +32,9 @@
 
 ＃────────■最小化解除
 ＊OnWindowStateMinimize
+＄回数_最小化=（回数_最小化）+１
 ＄手動セーブ	実行
+
 ＊OnWindowStateRestore
 ＄手動セーブ	実行
 ＞最小化解除

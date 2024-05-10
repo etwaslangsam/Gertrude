@@ -9,6 +9,8 @@
 ＃────────変更した
 ＊OnShellChanged
 ＄現在シェル	（Reference0）
+＄回数_シェル変更=（回数_シェル変更）+１
+＄回数_シェル_（Reference0）=（回数_シェル_（Reference0））+１
 ＄手動セーブ	実行
 ＞OnShellChanged_（Reference0）
 \0\s[105]どうデスか？\w5 似合ってる？\e
