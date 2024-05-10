@@ -15,6 +15,11 @@
 ＄現在シェル	master
 ＄Clicktalk	0
 ＄Gesturemenue	0
+＄ユ誕生月	0
+＄ユ誕生日	0
+＄ユ好物_食	未記入
+＄ユ特技	未記入
+＄ユ趣味	未記入
 ＠SAORI
 calc,saori/ssu.dll,calc
 calc_float,saori/ssu.dll,calc_float
